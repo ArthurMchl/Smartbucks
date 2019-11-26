@@ -1,0 +1,49 @@
+.card-voucher{
+  border: solid;
+  .brand{
+    background-color: red;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+
+    .logo{
+      background-image: url(https://france3-regions.francetvinfo.fr/bourgogne-franche-comte/sites/regions_france3/files/styles/top_big/public/assets/images/2019/04/19/12_off_fnac_chateaufarine_inauguration-00_00_28_00-4196654.jpg?itok=Kak4vY4g);
+      background-size: cover;
+      border: solid;
+      height: 28px;
+      width: 50%;
+      margin-top: 8px;
+    }
+  }
+
+
+  .category{
+    height: 22px;
+    border: solid green;
+  }
+  .numbers{
+    display: flex;
+    justify-content: space-around;
+    height: 22px;
+    border: solid orange;
+    .value{
+      border: solid;
+      width: 25%;
+    }
+
+    .price{
+      border: solid;
+      width: 25%;
+    }
+  }
+
+
+  .date{
+    height: 22px;
+    width: 100%;
+    border: solid yellow;
+    text-align: center;
+  }
+
+}
+
