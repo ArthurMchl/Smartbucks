@@ -7,7 +7,7 @@ class VouchersController < ApplicationController
   end
 
   def show
-    @voucher = vouchers_set_id
+    @voucher = voucher_set_id
   end
 
   def new
