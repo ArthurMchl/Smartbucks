@@ -7,18 +7,24 @@ class VouchersController < ApplicationController
   end
 
   def show
-    @voucher     = vouchers_set_id
-    @hide_navbar = true
+
+    @voucher = voucher_set_id
+
   end
 
   def new
     @voucher = Voucher.new
+    @brands  = Brand.all
   end
 
   def create
-    @voucher = Voucher.new(patient_params)
+    @voucher = Voucher.new(voucher_params)
+    brand = Brand.find(params[:voucher][:brand])
+    @voucher.brand = brand
+    @voucher.user = current_user
+
     if @voucher.save
-      redirect_to voucher_path(@voucher)
+      redirect_to publish_voucher_path(@voucher)
     else
       render :new
     end
@@ -40,6 +46,7 @@ class VouchersController < ApplicationController
   end
 
   def publish
+    @voucher = voucher_set_id
   end
 
   private
@@ -49,9 +56,6 @@ class VouchersController < ApplicationController
   end
 
   def voucher_params
-    params.require(:patient).permit(:value, :price,
-                                    :end_date, :category,
-                                    :bar_code, :status, :post_code,
-                                    :phone_number, :email, :photo)
+    params.require(:voucher).permit(:value, :price, :end_date, :category, :bar_code)
   end
 end
