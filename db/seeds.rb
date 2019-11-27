@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts '---- Delete all items in database ----'
-Brand.destroy_all
 Voucher.destroy_all
+Brand.destroy_all
 Order.destroy_all
 User.destroy_all
 
@@ -44,6 +44,7 @@ decathlon = Brand.create!(
   color: '#0082C3',
   logo: 'https://www.decathlon.fr/assets/images/decathlon-logo.svg'
 )
+
 fnac = Brand.create!(
 
 
@@ -51,6 +52,7 @@ fnac = Brand.create!(
   color: '#EBB300',
   logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2e/Fnac_Logo.svg'
 )
+
 cheque_vacance = Brand.create!(
 
 
@@ -58,6 +60,7 @@ cheque_vacance = Brand.create!(
   color: 'white',
   logo: 'https://www.ancv.com/sites/default/files/ancv_logo_cheque-vacances_4c.jpg'
 )
+
 h_m = Brand.create!(
 
 
@@ -65,6 +68,7 @@ h_m = Brand.create!(
   color: '#FF0025',
   logo: 'http://tous-logos.com/wp-content/uploads/2018/07/Symbole-HM.jpg'
 )
+
 smartbox = Brand.create!(
 
 
@@ -76,7 +80,7 @@ smartbox = Brand.create!(
 puts '-----------Seed Brand OK---------'
 
 puts '----Seed model Voucher (6 instances)------'
-  
+
 decathlon_50 = Voucher.create!(
   value: 50,
   price: 40,
@@ -86,6 +90,7 @@ decathlon_50 = Voucher.create!(
   brand_id: decathlon.id,
   user_id:  pierre.id
 )
+
 decathlon_100 = Voucher.create!(
 
 
@@ -96,7 +101,8 @@ decathlon_100 = Voucher.create!(
   bar_code: '86988565',
   brand_id: decathlon.id,
   user_id:  arthur.id
-)  
+ )
+
 smartbox_80 = Voucher.create!(
 
 
@@ -108,6 +114,7 @@ smartbox_80 = Voucher.create!(
   brand_id: smartbox.id,
   user_id:  micka.id
 )
+
 h_m_50 = Voucher.create!(
 
 
@@ -119,6 +126,7 @@ h_m_50 = Voucher.create!(
   brand_id: h_m.id,
   user_id:  micka.id
 )
+
 fnac_150 = Voucher.create!(
 
 
@@ -130,6 +138,7 @@ fnac_150 = Voucher.create!(
   brand_id: h_m.id,
   user_id:  micka.id
 )
+
 cheque_vacance_500 = Voucher.create!(
 
 
@@ -141,5 +150,6 @@ cheque_vacance_500 = Voucher.create!(
   brand_id: h_m.id,
   user_id:  werner.id
 )
-puts '-----------Seed Voucher OK------'
 
+puts '-----------Seed Voucher OK---------'
+puts '-----------Seed Voucher OK------'
