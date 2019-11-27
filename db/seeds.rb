@@ -85,7 +85,7 @@ decathlon_50 = Voucher.create!(
   value: 50,
   price: 40,
   end_date: Time.new(2019, 12, 31, 0, 0, 0, '+02:00'),
-  category: 'Carte cadeau',
+  category: 'Carte Cadeau',
   bar_code: '01234567',
   brand_id: decathlon.id,
   user_id:  pierre.id
@@ -97,7 +97,7 @@ decathlon_100 = Voucher.create!(
   value:    100,
   price:    75,
   end_date: Time.new(2020, 01, 31, 0, 0, 0, '+02:00'),
-  category: 'Carte cadeau',
+  category: 'Carte Cadeau',
   bar_code: '86988565',
   brand_id: decathlon.id,
   user_id:  arthur.id
@@ -109,7 +109,7 @@ smartbox_80 = Voucher.create!(
   value:    80,
   price:    60,
   end_date: Time.new(2020, 01, 31, 0, 0, 0, '+02:00'),
-  category: 'Coffret cadeau',
+  category: 'Coffret Cadeau',
   bar_code: '62503205',
   brand_id: smartbox.id,
   user_id:  micka.id
@@ -133,7 +133,7 @@ fnac_150 = Voucher.create!(
   value:    150,
   price:    100,
   end_date: Time.new(2020, 10, 15, 0, 0, 0, '+02:00'),
-  category: 'Carte cadeau',
+  category: 'Carte Cadeau',
   bar_code: '85640548',
   brand_id: h_m.id,
   user_id:  micka.id
@@ -145,7 +145,7 @@ cheque_vacance_500 = Voucher.create!(
   value: 500,
   price: 350,
   end_date: Time.new(2020, 12, 31, 0, 0, 0, '+02:00'),
-  category: 'Chèque cadeau',
+  category: 'Chèque Cadeau',
   bar_code: '18454810',
   brand_id: h_m.id,
   user_id:  werner.id

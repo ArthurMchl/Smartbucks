@@ -10,12 +10,14 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+<<<<<<< HEAD
     <% unless params[:controller] == "vouchers" && params[:action] == "show" %>
       <%= render 'shared/navbar' %>
     <% end %>
+=======
+    <%= render 'shared/navbar', hide_navbar: @hide_navbar %>
+>>>>>>> 0f0f587919b6322a711983bf6a33f47afd943d2a
     <%= render 'shared/flashes' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
