@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_141116) do
     t.integer "price"
     t.date "end_date"
     t.string "category"
-    t.integer "bar_code"
+    t.string "bar_code"
     t.string "status"
     t.bigint "user_id"
     t.bigint "brand_id"
@@ -61,3 +61,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_141116) do
   end
 
   add_foreign_key "orders", "users"
+  add_foreign_key "orders", "vouchers"
+  add_foreign_key "vouchers", "brands"
+  add_foreign_key "vouchers", "users"
+end
