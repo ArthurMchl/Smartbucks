@@ -1,47 +1,40 @@
-:root {
-  --component-color: #4DD599;
-  --component-backcolor: rgb(240, 240, 240);
-  --component-colorfont: rgba(0, 0, 0,0.6);
-  --button-backcolor: #4DD599;
-  --button-backcolor-hover: rgb(0, 60, 255);
-  --button-colorfont: rgb(255, 255, 255);
-}
-
-.container-textbox {
-    display: flex;
-    width: 350px;
-    height: 40px;
-    border: solid 2px var(--component-color);
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    background-color: var(--component-backcolor);
-}
-
-.container-textbox-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--component-color);
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-    width: 50px;
-    height: 100%;
-}
-
-.container-textbox-text {
-    background-color: transparent;
-    outline: none;
+.button {
+    color: var(--button-colorfont);
+    background-color:var(--button-backcolor);
+    border: solid 2px ;
+    border-color: var(--component-color);
+    border-radius: 12px;
+    text-decoration: none;
     font-size: 20px;
-    color: var(--omponent-colorfont);
-    margin: 0;
-    padding: 0 0 0 10px;
-    border: 0;
-    width: 290px;
-    height: 40px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+
 }
 
-.fas {
-    font-size: 24px;
-    color: rgb(231, 230, 230);
-    margin-right: 5px;
+.button-large-height {
+  height: 70px;
+  width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.button-small-height {
+  height: 45px;
+  width: 320px;
+}
+
+.button-small-height-width {
+  height: 45px;
+  width: 140px;
+}
+
+.button:hover {
+    text-decoration: none;
+    color: var(--button-colorfont);
+}
+
+.button i {
+    margin: 0 20px;
 }
