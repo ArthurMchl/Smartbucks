@@ -1,9 +1,12 @@
 class Voucher < ApplicationRecord
+
+  CATEGORIES = ["Coffret Cadeau", "Avoir", "Chèque Cadeau", "Carte Cadeau", ].sort
   belongs_to :user
   belongs_to :brand
 
   validates :price, :value, :end_date, :category, :bar_code, presence: true
   # Créer validates status avec Stripe !
+  validates :category, inclusion: CATEGORIES
 
   def pourcentage
     x = ((price * 100) / value)
@@ -28,4 +31,5 @@ class Voucher < ApplicationRecord
     end
     (coef_vouchers + coef_days) / 2
   end
+
 end
