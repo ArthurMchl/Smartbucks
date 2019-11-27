@@ -39,33 +39,34 @@ puts '----Seed model Brand (5 instances)------'
 
 decathlon = Brand.create!(
 
+
   name: 'Decathlon',
   color: '#0082C3',
   logo: 'https://www.decathlon.fr/assets/images/decathlon-logo.svg'
 )
-
 fnac = Brand.create!(
+
 
   name: 'Fnac',
   color: '#EBB300',
   logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2e/Fnac_Logo.svg'
 )
-
 cheque_vacance = Brand.create!(
+
 
   name: 'Chèque-Vacances',
   color: 'white',
   logo: 'https://www.ancv.com/sites/default/files/ancv_logo_cheque-vacances_4c.jpg'
 )
-
 h_m = Brand.create!(
+
 
   name: 'H&M',
   color: '#FF0025',
   logo: 'http://tous-logos.com/wp-content/uploads/2018/07/Symbole-HM.jpg'
 )
-
 smartbox = Brand.create!(
+
 
   name: 'Smartbox',
   color: '#646464',
@@ -85,8 +86,8 @@ decathlon_50 = Voucher.create!(
   brand_id: decathlon.id,
   user_id:  pierre.id
 )
-
 decathlon_100 = Voucher.create!(
+
 
   value:    100,
   price:    75,
@@ -95,9 +96,9 @@ decathlon_100 = Voucher.create!(
   bar_code: '86988565',
   brand_id: decathlon.id,
   user_id:  arthur.id
-)
-  
+)  
 smartbox_80 = Voucher.create!(
+
 
   value:    80,
   price:    60,
@@ -107,8 +108,8 @@ smartbox_80 = Voucher.create!(
   brand_id: smartbox.id,
   user_id:  micka.id
 )
-
 h_m_50 = Voucher.create!(
+
 
   value:    50,
   price:    35,
@@ -118,8 +119,8 @@ h_m_50 = Voucher.create!(
   brand_id: h_m.id,
   user_id:  micka.id
 )
-
 fnac_150 = Voucher.create!(
+
 
   value:    150,
   price:    100,
@@ -131,6 +132,7 @@ fnac_150 = Voucher.create!(
 )
 cheque_vacance_500 = Voucher.create!(
 
+
   value: 500,
   price: 350,
   end_date: Time.new(2020, 12, 31, 0, 0, 0, '+02:00'),
@@ -140,3 +142,4 @@ cheque_vacance_500 = Voucher.create!(
   user_id:  werner.id
 )
 puts '-----------Seed Voucher OK------'
+
