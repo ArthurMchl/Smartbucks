@@ -22,8 +22,9 @@ class Voucher < ApplicationRecord
       coef_days = 0.35
     end
     (coef_vouchers + coef_days) / 2
+  end
 
-    
+
   def pourcentage
     x = ((price * 100) / value)
     pourcent = ((1 - (x.fdiv(100))) * 100).round
