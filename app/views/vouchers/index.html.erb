@@ -1,2 +1,8 @@
 <h1>Vouchers#index</h1>
 <p>Find me in app/views/vouchers/index.html.erb</p>
+
+<div>
+<% @vouchers.each do |voucher| %>
+  <%= voucher.brand.name %>
+<% end %>
+</div>

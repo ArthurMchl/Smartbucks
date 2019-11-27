@@ -1,3 +1,13 @@
-<h1>Vouchers#show</h1>
-<p>Find me in app/views/vouchers/show.html.erb</p>
 
+<h1>Vouchers#show</h1>
+
+<div class="container-voucher" style = "background-color: <%= @voucher.brand.color %> ">
+  <h1>show client</h1>
+  <h1> <%= @voucher.brand.name %></h1>
+  <img src= <%= @voucher.brand.logo%> >
+  <h1> <%= @voucher.category %></h1>
+  <h1> <%= @voucher.price %></h1>
+  <h1> <%= @voucher.value%></h1>
+  <h1> <%= @voucher.pourcentage%> %</h1>
+  <h1> <%= parse_date_fr(@voucher.end_date)%></h1>
+</div>

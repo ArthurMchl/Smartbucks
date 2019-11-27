@@ -20,6 +20,7 @@ class VouchersController < ApplicationController
     brand = Brand.find(params[:voucher][:brand])
     @voucher.brand = brand
     @voucher.user = current_user
+
     if @voucher.save
       redirect_to publish_voucher_path(@voucher)
     else
