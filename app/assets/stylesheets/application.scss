@@ -11,9 +11,27 @@
 // Your CSS partials
 @import "components/index";
 @import "components/button";
+@import "components/textbox";
 @import "pages/index";
 @import "pages/home";
 
+:root {
+  --component-color: #4DD599;
+  --component-backcolor: rgb(240, 240, 240);
+  --component-colorfont: rgba(0, 0, 0,0.6);
+  --button-backcolor: #4DD599;
+  --button-backcolor-hover: rgb(0, 60, 255);
+  --button-colorfont: rgb(255, 255, 255);
+}
+
+* {
+    box-sizing: content-box;
+}
+
 body {
   background-color: white;
+}
+
+h1 ,h2 ,h3 ,h4, h5, h6, p ,ul, li {
+    margin: 0;
 }
