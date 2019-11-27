@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_180728) do
+ActiveRecord::Schema.define(version: 2019_11_26_141116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "brands", force: :cascade do |t|
+    t.string "name"
+    t.string "color"
+    t.string "logo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "price_cents"
+    t.bigint "user_id"
+    t.bigint "voucher_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+    t.index ["voucher_id"], name: "index_orders_on_voucher_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +45,23 @@ ActiveRecord::Schema.define(version: 2019_11_26_180728) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "vouchers", force: :cascade do |t|
+    t.integer "value"
+    t.integer "price"
+    t.date "end_date"
+    t.string "category"
+    t.string "bar_code"
+    t.string "status"
+    t.bigint "user_id"
+    t.bigint "brand_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_vouchers_on_brand_id"
+    t.index ["user_id"], name: "index_vouchers_on_user_id"
+  end
+
+  add_foreign_key "orders", "users"
+  add_foreign_key "orders", "vouchers"
+  add_foreign_key "vouchers", "brands"
+  add_foreign_key "vouchers", "users"
 end
