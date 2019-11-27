@@ -1,0 +1,38 @@
+.container-textbox {
+    display: flex;
+    width: 350px;
+    height: 40px;
+    border: solid 2px var(--component-color);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: var(--component-backcolor);
+}
+
+.container-textbox-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--component-color);
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    width: 50px;
+    height: 100%;
+}
+
+.container-textbox-text {
+    background-color: transparent;
+    outline: none;
+    font-size: 20px;
+    color: var(--omponent-colorfont);
+    margin: 0;
+    padding: 0 0 0 10px;
+    border: 0;
+    width: 290px;
+    height: 40px;
+}
+
+.fas {
+    font-size: 24px;
+    color: rgb(231, 230, 230);
+    margin-right: 5px;
+}
