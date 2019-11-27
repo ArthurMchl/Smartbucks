@@ -7,7 +7,8 @@ class VouchersController < ApplicationController
   end
 
   def show
-    @voucher = vouchers_set_id
+    @voucher     = vouchers_set_id
+    @hide_navbar = true
   end
 
   def new

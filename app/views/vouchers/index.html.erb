@@ -1,6 +1,29 @@
-<h1>Vouchers#index</h1>
-<p>Find me in app/views/vouchers/index.html.erb</p>
+<%= render 'shared/search_bar' %>
 
-<% @vouchers.each do |voucher| %>
-  <%= voucher %>
-<% end %>
+</div>
+
+    <div class="row">
+      <% @vouchers.each do |voucher| %>
+        <%= render "vouchers/card", voucher: voucher %>
+    </div>
+      <% end %>
+    </div>
+
+    <!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col-1">
+    </div>
+    <div class="col-5">
+
+
+    </div>
+    <div class="col-5">
+
+
+    </div>
+    <div class="col-1">
+    </div>
+  </div>
+</div>
+
+ -->

@@ -1,12 +1,16 @@
-.navbar-lewagon {
+.navbar-smartbucks {
   justify-content: space-between;
   background: white;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid #65d197;
+  padding: 16px;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-smartbucks .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-brand img{
+  width: 80px;
 }
