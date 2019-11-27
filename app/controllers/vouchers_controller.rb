@@ -7,7 +7,7 @@ class VouchersController < ApplicationController
   end
 
   def show
-    @voucher = vouchers_set_id
+    @voucher = voucher_set_id
   end
 
   def new
@@ -15,7 +15,7 @@ class VouchersController < ApplicationController
   end
 
   def create
-    @voucher = Voucher.new(patient_params)
+    @voucher = Voucher.new(voucher_params)
     if @voucher.save
       redirect_to voucher_path(@voucher)
     else
@@ -48,9 +48,8 @@ class VouchersController < ApplicationController
   end
 
   def voucher_params
-    params.require(:patient).permit(:value, :price,
+    params.require(:voucher).permit(:value, :price,
                                     :end_date, :category,
-                                    :bar_code, :status, :post_code,
-                                    :phone_number, :email, :photo)
+                                    :bar_code, :status)
   end
 end
