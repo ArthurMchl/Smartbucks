@@ -1,16 +1,18 @@
-<h1>Vouchers#publish</h1>
-<p>Find me in app/views/vouchers/publish.html.erb</p>
+<div class="container-recap">
 
-<h3 class="title">Récapitulatif</h3>
+  <h3 class="title">Récapitulatif</h3>
 
-<p> Marque : <%= @voucher.brand.name %></p>
-<p> Date d'expiration : <%= @voucher.end_date %> </p>
-<p> Valeur du bon : <%= @voucher.price %> €</p>
+  <p class="text-recap"> <%= @voucher.brand.name %></p>
+  <p class="text-recap"> <%= @voucher.end_date %> </p>
+  <p class="text-recap"> <%= @voucher.price %> €</p>
 
-  <%= link_to voucher_path(@voucher) do %>
-    <div class="btn btn-primary">Publier</div>
-  <% end %>
+  <div class="container-button-recap">
+    <%= link_to voucher_path(@voucher) do %>
+    <div class="button button-small-height-width">Publier</div>
+    <% end %>
 
-  <%= link_to edit_voucher_path(@voucher) do %>
-    <div class="btn btn-primary">Modifier</div>
-  <% end %>
+    <%= link_to edit_voucher_path(@voucher) do %>
+    <div class="button button-small-height-width">Modifier</div>
+    <% end %>
+  </div>
+</div>
