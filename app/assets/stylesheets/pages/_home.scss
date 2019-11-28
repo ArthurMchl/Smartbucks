@@ -1,11 +1,19 @@
 // Specific CSS for your home-page
 #banner{
   height: calc(100vh - 284px);
-  background-image: asset-url('sbbanner.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.4)), asset-url('sbbanner.jpg');
   background-size: cover;
   background-position: center;
 }
 
+#banner p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    color: white;
+    padding: 236px 36px 0px 36px;
+    text-align: center;
+}
 .selling-button{
   display: flex;
   justify-content: center;
