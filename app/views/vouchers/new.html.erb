@@ -1,29 +1,36 @@
-<h1>Vouchers#new</h1>
+<h3>Vouchers#new</h3>
 <p>Find me in app/views/vouchers/new.html.erb</p>
 
 <% if params[:step] == "1" %>
 
+<div class="container-form">
+
 <!--   creer un partial avec les 4 boutons vers
   qui redirige vers new_vouchers avec les params step 2 & category -->
-  <%= link_to new_voucher_path(category: 'Carte Cadeau', step: 2) do %>
-    <div class="btn btn-primary">Carte cadeau</div>
+  <%= link_to new_voucher_path(category: 'Carte Cadeau', step: 2), class:"button button-small-height button-form"  do %>
+   <div> Carte Cadeau </div>
   <% end %>
 
-  <%= link_to new_voucher_path(category: 'Chèque Cadeau', step: 2) do %>
-    <div class="btn btn-primary">Chèque cadeau</div>
+  <%= link_to new_voucher_path(category: 'Chèque Cadeau', step: 2), class:"button button-small-height button-form"  do %>
+    Chèque Cadeau
   <% end %>
 
-  <%= link_to new_voucher_path(category: 'Coffret Cadeau', step: 2) do %>
-    <div class="btn btn-primary">Coffret cadeau</div>
+  <%= link_to new_voucher_path(category: 'Coffret Cadeau', step: 2), class:"button button-small-height button-form"  do %>
+    Coffret Cadeaux
   <% end %>
 
-  <%= link_to new_voucher_path(category: 'Avoir', step: 2) do %>
-    <div class="btn btn-primary">Avoir</div>
+  <%= link_to new_voucher_path(category: 'Avoir', step: 2), class:"button button-small-height button-form"  do %>
+    Avoir
   <% end %>
 
-  <%= link_to root_path do %>
-    <div class="btn btn-danger">Retour</div>
-  <% end %>
+  <div class="position-absolute-bottom">
+    <%= link_to root_path, class:"button button-small-height-width position-absolute-bottom"  do %>
+      Retour
+    <% end %>
+  </div>
+
+
+</div>
 
 
 <% elsif params[:step] == "2" %>
