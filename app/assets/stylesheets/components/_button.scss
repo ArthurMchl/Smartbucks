@@ -23,6 +23,7 @@
 .button-small-height {
   height: 45px;
   width: 320px;
+  vertical-align: center;
 }
 
 .button-small-height-width {
@@ -37,6 +38,10 @@
 
 .button i {
     margin: 0 20px;
+}
+
+.button-form{
+  margin-top: 20px;
 }
 
 .container-voucher .btn-white {
