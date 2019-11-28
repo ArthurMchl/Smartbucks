@@ -1,7 +1,25 @@
 // Specific CSS for your home-page
 #banner{
-  height: calc(100vh - 135px);
+  height: calc(100vh - 284px);
   background-image: asset-url('sbbanner.jpg');
   background-size: cover;
   background-position: center;
+}
+
+.selling-button{
+  display: flex;
+  justify-content: center;
+  margin: 8px;
+}
+
+.informations{
+  display: flex;
+  justify-content: center;
+}
+
+.informations a{
+  color: grey;
+}
+.informations :hover{
+  text-decoration: none;
 }

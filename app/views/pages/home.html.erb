@@ -1,13 +1,25 @@
 <%= render 'shared/search_bar' %>
 
 <div id="banner">
-
 </div>
 
-<%= link_to new_voucher_path ,class: "button button-large-height" do %>
-  Je vends un bon
-<% end %>
+  <div class="selling-button">
+    <%= link_to new_voucher_path, class: "button button-large-height" do %>
+      Je vends un bon
+    <% end %>
+  </div>
 
+<div class="informations">
+    <%= link_to "Comment ca marche?", new_voucher_path %>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <% @vouchers.each do |voucher| %>
+      <%= render 'vouchers/card', voucher: voucher %>
+  </div>
+    <% end %>
+</div>
 
 <!-- <div class="container-fluid">
   <div class="row">
