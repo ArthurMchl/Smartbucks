@@ -25,7 +25,12 @@
  padding:10px;
 }
 
-
-.container-button-recap {
-
+.container-form {
+  height: 1000px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
