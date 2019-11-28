@@ -1,8 +1,10 @@
 class VouchersController < ApplicationController
   def index
     if params[:query].present?
-      @vouchers = Voucher.brand.where(name: params[:query].downcase.capitalize)
-    else @vouchers = Voucher.all
+      sql_query = "brands.name ILIKE ?"
+      @vouchers = Voucher.joins(:brand).where(sql_query, "%#{params[:query]}%")
+    else
+      @vouchers = Voucher.all
     end
   end
 
