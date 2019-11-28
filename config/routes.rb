@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :vouchers do
-    resources :orders, only: [:new, :create]
+    resources :orders, only: [:new, :create, :show]
     get 'publish', on: :member
   end
 
