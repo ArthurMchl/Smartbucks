@@ -13,20 +13,25 @@ class VouchersController < ApplicationController
   end
 
   def new
-    @voucher = Voucher.new
-    @brands  = Brand.all
+    if params[:step].present?
+      @voucher = Voucher.new
+      @brands  = Brand.all
+    else
+      redirect_to new_voucher_path(step: 1)
+    end
   end
 
   def create
     @voucher = Voucher.new(voucher_params)
-    brand = Brand.find(params[:voucher][:brand])
+    brand = Brand.find(params[:voucher][:brand]) if params[:voucher][:brand].present?
     @voucher.brand = brand
     @voucher.user = current_user
 
     if @voucher.save
       redirect_to publish_voucher_path(@voucher)
     else
-      render :new
+      redirect_to new_voucher_path(step: 1)
+      flash[:alert] = "Une erreur est survenue"
     end
   end
 
