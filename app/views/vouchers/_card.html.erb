@@ -1,28 +1,28 @@
 <div class="card-voucher">
 
-  <div class="brand">
-    <div class="logo">
+  <div class="brand" style="background-color: <%= voucher.brand.color %>">
+    <div class="logo" style="background-image: url(<%= voucher.brand.logo %>)">
 
     </div>
   </div>
 
   <div class="details">
     <div class="category">
-      <p>Bon d'achat</p>
+      <%= voucher.category %>
     </div>
 
     <div class="numbers">
       <div class="value">
-        <p>50€</p>
+        <%= voucher.value%> €
       </div>
 
       <div class="price">
-        <p>40€</p>
+        <%= voucher.price%> €
       </div>
     </div>
 
     <div class="date">
-      <p><i class="far fa-clock"> 19/12/20</i></p>
+      <p><i class="far fa-clock"> <%= voucher.end_date %></i></p>
     </div>
   </div>
 

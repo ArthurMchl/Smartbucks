@@ -1,16 +1,20 @@
-<h1>Vouchers#publish</h1>
-<p>Find me in app/views/vouchers/publish.html.erb</p>
+<div class="container-recap">
 
-<h1>Récapitulatif</h1>
-
-<p> Marque : <%= @voucher.brand.name %></p>
-<p> Date d'expiration : <%= @voucher.end_date %> </p>
-<p> Valeur du bon : <%= @voucher.price %> €</p>
-
-  <%= link_to voucher_path(@voucher) do %>
-    <div class="btn btn-primary">Publier</div>
-  <% end %>
-
-  <%= link_to edit_voucher_path(@voucher) do %>
-    <div class="btn btn-primary">Modifier</div>
-  <% end %>
+  <h3 class="title">Récapitulatif</h3>
+  <div class="voucher-publish-grid text-recap text-center">
+    <div><i class="fas fa-shopping-cart text-ico"></i></div>
+    <div><%= @voucher.brand.name %></div>
+    <div><i class="fas fa-calendar-times text-ico"></i> </div>
+    <div><%= @voucher.end_date %></div>
+    <div><i class="fas fa-dollar-sign text-ico"></i> </div>
+    <div><%= @voucher.price %> €</div>
+    <div><%= image_tag("logo_smartbucks",size: "100x40" )%></div>
+    <div>A remplacer</div>
+  </div>
+  <div class="container-button-recap">
+    <%= link_to voucher_path(@voucher) do %>
+    <div class="button button-small-height">Publier</div>
+    <% end %>
+      </div>
+    <%= link_to "Modifier", edit_voucher_path(@voucher), class: "text-url-center" %>
+</div>

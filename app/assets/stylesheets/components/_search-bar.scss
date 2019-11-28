@@ -6,6 +6,7 @@
   background-color: white;
   border-bottom: 1px solid #65d197;
   padding: 10px;
+  z-index: 2;
 
       .categories{
       }
@@ -18,6 +19,14 @@
 #query{
   border-left: none;
   // border: none;
+}
+
+select {
+  outline: none;
+}
+
+select:focus {
+  box-shadow: none !important;
 }
 
 input {
@@ -38,6 +47,6 @@ input:focus  {
 
 .custom-select {
   height: 38px;
-  width: 150px;
+  width: 104px;
   font-size: 14px;
 }

@@ -1,29 +1,60 @@
 <%= render 'shared/search_bar' %>
 
 <div id="banner">
-
+  <p>Revendez vos bons en un clin d'oeil</p>
 </div>
 
-<%= link_to new_voucher_path(step: 1) ,class: "button button-large-height" do %>
-  Je vends un bon
-<% end %>
+<div class="selling-button">
+  <%= link_to new_voucher_path, class: "button button-large-height" do %>
+    Je vends un bon
+  <% end %>
+</div>
 
+<div class="informations">
+  <%= link_to "Comment ca marche?", new_voucher_path %>
+</div>
 
-<!-- <div class="container-fluid">
-  <div class="row">
-    <div class="col-1">
+<div id="carouselBestOffer" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div id="topdeals">
+      <p>Meilleures Offres</p>
     </div>
-    <div class="col-5">
-
-
-    </div>
-    <div class="col-5">
-
-
-    </div>
-    <div class="col-1">
-    </div>
+    <% @vouchers.each_slice(mobile_device? ? 2 : 4).to_a.each_with_index do |vouchers, index| %>
+      <div class="carousel-item <%= "active" if index == 0 %>">
+        <div class="d-flex justify-content-around mx-4">
+          <a class="carousel-control-prev" href="#carouselBestOffer" role="button" data-slide="prev">
+            P
+          </a>
+          <% vouchers.each do |voucher| %>
+              <%= render 'vouchers/card', voucher: voucher %>
+          <% end %>
+          <a class="carousel-control-next" href="#carouselBestOffer" role="button" data-slide="next">
+            N
+          </a>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
 
--->
+<div id="carouselTopBrand" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+        <div id="topbrands">
+          <p>Par marque</p>
+        </div>
+    <% @vouchers.each_slice(4).to_a.each_with_index do |vouchers, index| %>
+      <div class="carousel-item <%= "active" if index == 0 %>">
+        <div class="d-flex justify-content-around mx-4">
+          <a class="carousel-control-prev" href="#carouselTopBrand" role="button" data-slide="prev">
+            P
+          </a>
+          <%= render 'vouchers/card', voucher: vouchers.first %>
+          <%= render 'vouchers/card', voucher: vouchers.last %>
+          <a class="carousel-control-next" href="#carouselTopBrand" role="button" data-slide="next">
+            N
+          </a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
