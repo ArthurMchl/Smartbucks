@@ -1,4 +1,4 @@
-<h1>Vouchers#new</h1>
+<h3>Vouchers#new</h3>
 <p>Find me in app/views/vouchers/new.html.erb</p>
 
 <% if params[:step] == "1" %>
@@ -7,7 +7,7 @@
 
 <!--   creer un partial avec les 4 boutons vers
   qui redirige vers new_vouchers avec les params step 2 & category -->
-  <%= link_to new_voucher_path(category: 'Carte Cadeau', step: 2), class:"button button-small-height"  do %>
+  <%= link_to new_voucher_path(category: 'Carte Cadeau', step: 2), class:"button button-small-height button-form"  do %>
    <div> Carte Cadeau </div>
   <% end %>
 
@@ -23,9 +23,12 @@
     Avoir
   <% end %>
 
-  <%= link_to root_path, class:"button button-small-height"  do %>
-    Retour
-  <% end %>
+  <div class="position-absolute-bottom">
+    <%= link_to root_path, class:"button button-small-height-width position-absolute-bottom"  do %>
+      Retour
+    <% end %>
+  </div>
+
 
 </div>
 
