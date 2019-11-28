@@ -34,18 +34,9 @@ body {
   height: 100%;
 }
 
-h1 ,h2 ,h3 ,h4, h5, h6, p ,ul, li {
+h1 ,h2 ,h3 ,h4, h5, h6, p ,ul, li, .fas {
     margin: 0;
 }
 
-.container-button-recap {
-  display:flex;
-  justify-content: space-around;
-  // position: absolute;
-  // bottom: 0px
-}
 
-.container-recap {
-  width: 100;
-  height: 100%;
-}
+
