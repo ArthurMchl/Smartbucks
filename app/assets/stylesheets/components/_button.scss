@@ -23,12 +23,23 @@
 .button-small-height {
   height: 45px;
   width: 320px;
+<<<<<<< HEAD
   vertical-align: center;
+=======
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+>>>>>>> 112673dc66c30f5d613b5e13ec7a3aba38ad5654
 }
 
 .button-small-height-width {
   height: 45px;
   width: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
 .button:hover {
