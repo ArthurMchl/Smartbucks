@@ -26,9 +26,15 @@
       <%=  image_tag "barcode"   %>
       </div>
        <div class="footer">
-        <i class="fas fa-edit"></i>
-          Retour à mes annonces
-         <i class="fas fa-trash"></i>
+
+        <%= link_to edit_voucher_path(@voucher) do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+
+          <span class = "retour"> <%= link_to "Retour à mes annonces", profile_path  %> </span>
+        <%= link_to profile_path, method: :delete, data: { confirm: "Are you sure?" } do %>
+      <i class="fas fa-trash"></i>
+      <% end %>
     </div>
  <% end %>
 </div>
