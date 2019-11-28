@@ -10,7 +10,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-<% unless params[:controller] == "vouchers" && params[:action] == "show" %>
+    <% unless params[:controller] == "vouchers" && params[:action] == "show" %>
       <%= render 'shared/navbar', hide_navbar: @hide_navbar %>
     <% end %>
     <%= render 'shared/flashes' %>

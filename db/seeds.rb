@@ -135,7 +135,7 @@ fnac_150 = Voucher.create!(
   end_date: Time.new(2020, 10, 15, 0, 0, 0, '+02:00'),
   category: 'Carte Cadeau',
   bar_code: '85640548',
-  brand_id: h_m.id,
+  brand_id: fnac.id,
   user_id:  micka.id
 )
 
@@ -147,7 +147,7 @@ cheque_vacance_500 = Voucher.create!(
   end_date: Time.new(2020, 12, 31, 0, 0, 0, '+02:00'),
   category: 'Chèque Cadeau',
   bar_code: '18454810',
-  brand_id: h_m.id,
+  brand_id: cheque_vacance.id,
   user_id:  werner.id
 )
 
