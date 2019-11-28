@@ -57,7 +57,7 @@
     Avoir
   <% end %>
 
-  <div class="position-absolute-bottom">
+  <div class="position-bottom">
     <%= link_to root_path, class:"button button-small-height-width position-absolute-bottom"  do %>
       Retour
     <% end %>
@@ -99,7 +99,7 @@
     <h3 class="title">Numéro de code barre</h3>
     <input type="text" name="bar_code">
 
-    <div class="position-absolute-bottom">
+    <div class="position-bottom">
 
       <%= link_to 'Précedent', new_voucher_path(step: 1), class:"button button-small-height-width" %>
 
@@ -135,7 +135,7 @@
        <%= f.input :value, as: :integer, label: "Valeur du bon", :label_html => { :class => 'title-label' } %>
        <%= f.input :price, as: :integer, label: 'Prix à la vente', :label_html => { :class => 'title-label' } %>
 
-        <div class="position-absolute-bottom">
+        <div class="position-bottom">
           <%= link_to 'Précedent', new_voucher_path(step: 1), class:"button button-small-height-width" %>
           <%= f.submit 'Valider', :class => "button button-small-height-width" %>
         </div>

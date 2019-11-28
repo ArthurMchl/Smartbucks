@@ -35,6 +35,10 @@
   margin: 0;
 }
 
+input[type="submit" i] {
+  padding: 0 !important;
+}
+
 .button:hover {
     text-decoration: none;
     color: var(--button-colorfont);
@@ -66,11 +70,9 @@
   margin-top: 120px;
 }
 
-.position-absolute-bottom {
+.position-bottom {
   display: flex;
   justify-content: space-around;
-  position: absolute;
-  bottom: 10px;
-
+  margin-top: 40px;
 }
 

@@ -16,9 +16,22 @@
   margin-bottom: 50px;
 }
 
+.title-label-edit{
+  color: var(--component-color);
+  margin-top: 0px;
+  text-align: center;
+  font-size: 25px;
+  font-weight:bold;
+  margin-bottom: 10px;
+}
+
 .text-url-center {
   color: var(--component-color);
   font-weight: bold;
+}
+
+input {
+  padding: 0px;
 }
 
 .text-recap {
