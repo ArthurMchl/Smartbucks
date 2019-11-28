@@ -1,14 +1,10 @@
 .button {
     color: var(--button-colorfont);
     background-color:var(--button-backcolor);
-    border: solid 2px ;
-    border-color: var(--component-color);
     border-radius: 12px;
-    text-decoration: none;
     font-size: 20px;
     font-weight: bold;
     color: rgb(255, 255, 255);
-
 }
 
 .button-large-height {
@@ -71,7 +67,10 @@
 }
 
 .position-absolute-bottom {
+  display: flex;
+  justify-content: space-around;
   position: absolute;
-  bottom: 40px; left: 50px;
+  bottom: 10px;
 
 }
+
