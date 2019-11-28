@@ -40,6 +40,11 @@ class VouchersController < ApplicationController
   def update
     @voucher = voucher_set_id
     @voucher.update(voucher_params)
+    if @voucher.save
+      redirect_to voucher_path(@voucher)
+    else
+      render :edit
+    end
   end
 
   def destroy
