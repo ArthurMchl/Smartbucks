@@ -1,0 +1,34 @@
+<div class="container-voucher" style="background-color: <%= voucher.brand.color %>">
+  <div class =logo>
+    <img id="logo" src= <%= voucher.brand.logo%> >
+  </div>
+  <% if voucher.user == current_user %>
+    <h1>Votre bon est en ligne !</h1>
+  <% end %>
+
+  <h2> - <%= voucher.pourcentage%> %</h1>
+  <h1> valeur en magasin : <%= voucher.value%> €</h1>
+  <h1> type : <%= voucher.category %> </h1>
+  <h1> expiration : <%= parse_date_fr(voucher.end_date)%></h1>
+
+  <div class ="b">
+    <% if voucher.user == current_user %>
+
+    <% else %>
+      <%= link_to voucher_path, class: "btn-white", style: "color: #{voucher.brand.color}" do %>
+        Payer <%= voucher.price %> €
+      <% end %>
+    <% end %>
+  </div>
+
+  <% if voucher.user == current_user %>
+      <div class = "barcode">
+      <%=  image_tag "barcode"   %>
+      </div>
+       <div class="footer">
+        <i class="fas fa-edit"></i>
+          Retour à mes annonces
+         <i class="fas fa-trash"></i>
+    </div>
+ <% end %>
+</div>

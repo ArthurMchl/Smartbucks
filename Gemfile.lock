@@ -45,6 +45,7 @@ GEM
     arel (9.0.0)
     autoprefixer-rails (9.7.2)
       execjs
+    barby (0.6.8)
     bcrypt (3.1.13)
     bindex (0.8.1)
     bootsnap (1.4.5)
@@ -194,6 +195,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  barby
   bootsnap
   devise
   dotenv-rails
