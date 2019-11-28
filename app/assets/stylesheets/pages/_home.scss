@@ -1,19 +1,22 @@
 // Specific CSS for your home-page
 #banner{
+  position: relative;
   height: calc(100vh - 284px);
   background-image: linear-gradient(rgba(0,0,0,0.4)), asset-url('sbbanner.jpg');
   background-size: cover;
   background-position: center;
 }
 
-#banner p {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    font-size: 32px;
-    color: white;
-    padding: 236px 36px 0px 36px;
-    text-align: center;
+#banner > p {
+  position: absolute;
+  padding: 320px 36px 36px 30px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  color: white;
+  text-align: center;
 }
+
 .selling-button{
   display: flex;
   justify-content: center;
@@ -23,6 +26,7 @@
 .informations{
   display: flex;
   justify-content: center;
+  height: 48px;
 }
 
 .informations a{
@@ -30,4 +34,19 @@
 }
 .informations :hover{
   text-decoration: none;
+}
+
+
+#topdeals{
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 18px;
+    color: grey;
+    margin-left: 42px;
+    margin-top: 32px;
+}
+ #topbrands{
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 18px;
+  color: grey;
+  margin-left: 42px;
 }
