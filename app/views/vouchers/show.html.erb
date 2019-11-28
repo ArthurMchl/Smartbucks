@@ -1,6 +1,6 @@
 <div class="container-voucher" style="background-color: <%= @voucher.brand.color %>">
   <div class =logo>
-    <img src= <%= @voucher.brand.logo%> >
+    <img id="logo" src= <%= @voucher.brand.logo%> >
   </div>
   <h2> - <%= @voucher.pourcentage%> %</h1>
   <h1> valeur en magasin : <%= @voucher.value%> €</h1>
@@ -8,7 +8,7 @@
   <h1> expiration : <%= parse_date_fr(@voucher.end_date)%></h1>
   <div class ="b">
   <%= link_to voucher_path, class: "btn-white", style: "color: #{@voucher.brand.color}" do %>
-    payer <%= @voucher.price %> €
+    Payer <%= @voucher.price %> €
   <% end %>
   </div>
 </div>
