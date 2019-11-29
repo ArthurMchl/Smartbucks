@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     get 'publish', on: :member
   end
 
-  mount StripeEvent::Engine, at: '/stripe-webhooks'
+  mount StripeEvent::Engine, at: '/stripe-webhooks/'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
