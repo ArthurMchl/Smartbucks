@@ -3,7 +3,7 @@
 
   <div class="brand" style="background-color: <%= voucher.brand.color %>">
     <div class="logo-container">
-      <div class="logo" style="background-image: url(<%= voucher.brand.logo %>);"></div>
+      <%= image_tag voucher.brand.logo, height: '80%', width: '80%', class:"logo-marks"  %>
     </div>
   </div>
 
