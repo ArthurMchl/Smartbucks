@@ -8,7 +8,7 @@
     <div><%= @voucher.end_date %></div>
     <div><i class="fas fa-dollar-sign text-ico"></i> </div>
     <div><%= @voucher.price %> €</div>
-    <div><%= image_tag("logo_smartbucks.png",size: "100x40" )%></div>
+    <div><%= image_tag("logo_smartbucks",size: "100x40" )%></div>
     <div>A remplacer</div>
   </div>
 
@@ -16,3 +16,4 @@
     <%= link_to "Modifier", edit_voucher_path(@voucher), class:"button button-small-height-width position-absolute-bottom" %>
     <%= link_to 'Publier', voucher_path(@voucher), class:"button button-small-height-width position-absolute-bottom"%>
   </div>
+</div>
