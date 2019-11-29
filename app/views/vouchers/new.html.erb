@@ -1,6 +1,6 @@
 
 <% if params[:step] == "1" %>
-                 
+
   <div class="container-form">
     <svg width="338" height="60" viewBox="0 0 338 60" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="11" cy="49" r="11" fill="#4DD599"/>
@@ -107,7 +107,7 @@
     <%= f.input :bar_code, as: :hidden, input_html: { value: params[:bar_code] } %>
     <%= f.input :value, as: :integer, label: "Valeur du bon", :label_html => { :class => 'title-label' },:input_html => { :class => 'text-value' } %>
     <p id="price-advice" class=""></p>
-    <%= f.input :price, as: :integer, label: 'Prix à la vente', :label_html => { :class => 'title-label' }, :input_html => { :class => 'text-' }%>
+    <%= f.input :price, as: :integer, label: 'Prix à la vente', :label_html => { :class => 'title-label' } %>
 
 
     <div class="position-bottom">
