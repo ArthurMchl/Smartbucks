@@ -5,11 +5,11 @@
     <div><i class="fas fa-shopping-cart text-ico"></i></div>
     <div><%= @voucher.brand.name %></div>
     <div><i class="fas fa-calendar-times text-ico"></i> </div>
-    <div><%= @voucher.end_date %></div>
+    <div><%= parse_date_fr(@voucher.end_date) %></div>
     <div><i class="fas fa-dollar-sign text-ico"></i> </div>
     <div><%= @voucher.price %> €</div>
     <div><%= image_tag("logo_smartbucks",size: "100x40" )%></div>
-    <div>A remplacer</div>
+    <div>Gratuit</div>
   </div>
 
   <div class="position-bottom">
