@@ -1,4 +1,5 @@
 .card-voucher{
+  justify-content: center;
   height: 200px;
   width:  150px;
   margin: 10px 0px 25px 0px;
@@ -71,3 +72,6 @@
 
 }
 
+.card-voucher :hover {
+  text-decoration: none;
+}
