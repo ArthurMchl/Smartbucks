@@ -13,6 +13,8 @@ class VouchersController < ApplicationController
   end
 
   def new
+    # voucher_count
+    @vc = Voucher.count
     if params[:step].present?
       @voucher = Voucher.new
       @brands  = Brand.all
