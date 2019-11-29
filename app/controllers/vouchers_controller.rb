@@ -52,7 +52,7 @@ class VouchersController < ApplicationController
   def destroy
     @voucher = voucher_set_id
     @voucher.delete
-    redirect_to vouchers_path
+    redirect_to profile_path
   end
 
   def publish
