@@ -84,11 +84,11 @@
       <input type="text" class="d-none" name="category" value="<%= params[:category] %>">
       <input type="text" class="d-none" name="step" value="<%= params[:step].to_i + 1 %>">
 
-      <h3 class="title">Marque(s)</h3>
+    <h3 class="title">Marque</h3>
 
-      <select name="brand_id" id="brand-select">
-        <option value=""></option>
-        <% @brands.each do |brand| %>
+    <select name="brand_id" id="brand-select" class="select2">
+      <option value=""></option>
+      <% @brands.each do |brand| %>
         <option value="<%= brand.id %>"><%= brand.name %></option>
         <% end %>
       </select>
@@ -146,3 +146,4 @@
     <div id="voucher_count" data-vc="<%= @vc %>"></div>
   </div>
   <% end %>
+

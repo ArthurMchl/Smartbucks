@@ -1,6 +1,10 @@
 class VouchersController < ApplicationController
   def index
-    if params[:query].present?
+
+    if params[:query].present? && !params[:category].empty?
+      sql_query = "brands.name ILIKE ? AND vouchers.category = ?"
+      @vouchers = Voucher.joins(:brand).where(sql_query, "%#{params[:query]}%", params[:category])
+    elsif params[:query].present?
       sql_query = "brands.name ILIKE ?"
       @vouchers = Voucher.joins(:brand).where(sql_query, "%#{params[:query]}%")
     else
@@ -44,12 +48,17 @@ class VouchersController < ApplicationController
   def update
     @voucher = voucher_set_id
     @voucher.update(voucher_params)
+    if @voucher.save
+      redirect_to voucher_path(@voucher)
+    else
+      render :edit
+    end
   end
 
   def destroy
     @voucher = voucher_set_id
     @voucher.delete
-    redirect_to vouchers_path
+    redirect_to profile_path
   end
 
   def publish

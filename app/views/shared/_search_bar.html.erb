@@ -1,18 +1,19 @@
 <div class="search-bar">
-  <div class="categories">
-    <select class="browser-default custom-select">
-      <option selected>Catégorie</option>
-        <% Voucher::CATEGORIES.each do |category| %>
-          <option>
-            <p> <%= category %> </p>
-          </option>
-        <% end %>
-    </select>
-  </div>
+
 
   <div class="text">
   <%= form_tag vouchers_path, method: :get, class: "ml-3 d-flex" do %>
-    <div class="fas mr-0 fa-search search-icon" style="padding-top: 10px">
+    <div class="categories">
+      <select name="category" class="browser-default custom-select">
+        <option value="">Catégorie</option>
+          <% Voucher::CATEGORIES.each do |category| %>
+            <option <% if category == params[:category] %> selected <% end %>>
+              <p> <%= category %> </p>
+            </option>
+          <% end %>
+      </select>
+    </div>
+    <div class="fas mr-0 fa-search search-icon" style="padding-top: 18px; color: grey;">
     </div>
     <%= text_field_tag :query,
       params[:query],

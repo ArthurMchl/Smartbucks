@@ -1,5 +1,6 @@
 require 'date'
 class Voucher < ApplicationRecord
+  monetize :price_cents
 
   CATEGORIES = ["Coffret Cadeau", "Avoir", "Chèque Cadeau", "Carte Cadeau"].sort
   belongs_to :user
@@ -14,4 +15,5 @@ class Voucher < ApplicationRecord
     pourcent = ((1 - (x.fdiv(100))) * 100).round
     return pourcent
   end
+
 end
