@@ -13,8 +13,9 @@
   <div class ="b">
     <% if voucher.user == current_user %>
     <% else %>
-      <%= link_to voucher_path, class: "btn-white", style: "color: #{voucher.brand.color}" do %>
-        Payer <%= voucher.price %> €
+      <%= form_tag orders_path do %>
+        <%= hidden_field_tag 'voucher_id', @voucher.id %>
+        <%= submit_tag 'Payer', class: 'btn-white', style: "color: #{voucher.brand.color}"%>
       <% end %>
     <% end %>
   </div>
