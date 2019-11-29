@@ -24,9 +24,7 @@ ActiveRecord::Schema.define(version: 2019_11_29_093225) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "amount_cents", default: 0, null: false
-    t.string "checkout_session_id"
-    t.string "state"
+    t.integer "price_cents"
     t.bigint "user_id"
     t.bigint "voucher_id"
     t.datetime "created_at", null: false

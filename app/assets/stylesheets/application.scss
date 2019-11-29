@@ -40,3 +40,11 @@ h1 ,h2 ,h3 ,h4, h5, h6, p ,ul, li, .fas {
 a :hover{
   text-decoration: none;
 }
+
+input[type=submit] {
+  border: none;
+}
+
+input[type=number] {
+  padding: 0;
+}
