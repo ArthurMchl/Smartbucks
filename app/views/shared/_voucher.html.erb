@@ -21,7 +21,7 @@
 
   <% if voucher.user == current_user %>
       <div class = "barcode">
-        <%=  image_tag "barcode"   %>
+      <%=  image_tag "barcode.png"   %>
       </div>
       <div class="footer">
         <%= link_to edit_voucher_path(@voucher) do %>
