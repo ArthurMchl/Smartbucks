@@ -1,1 +1,11 @@
 <%= render 'shared/search_bar' %>
+
+<div class="index-grid">
+  <% @vouchers.each_slice(2).to_a.each do |vouchers| %>
+      <% vouchers.each do |voucher|%>
+
+          <%= render 'vouchers/card', voucher: voucher %>
+
+      <% end %>
+  <% end %>
+</div>

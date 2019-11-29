@@ -1,8 +1,10 @@
 class VouchersController < ApplicationController
   def index
     if params[:query].present?
-      @vouchers = Voucher.brand.where(name: params[:query].downcase.capitalize)
-    else @vouchers = Voucher.all
+      sql_query = "brands.name ILIKE ?"
+      @vouchers = Voucher.joins(:brand).where(sql_query, "%#{params[:query]}%")
+    else
+      @vouchers = Voucher.all
     end
   end
 
@@ -40,6 +42,11 @@ class VouchersController < ApplicationController
   def update
     @voucher = voucher_set_id
     @voucher.update(voucher_params)
+    if @voucher.save
+      redirect_to voucher_path(@voucher)
+    else
+      render :edit
+    end
   end
 
   def destroy

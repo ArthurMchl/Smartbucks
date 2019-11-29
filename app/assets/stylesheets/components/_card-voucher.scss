@@ -1,7 +1,8 @@
 .card-voucher{
+  justify-content: center;
   height: 200px;
   width:  150px;
-  margin: 60px 0px;
+  margin: 10px 0px 25px 0px;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   background-color: white;
@@ -71,3 +72,6 @@
 
 }
 
+.card-voucher :hover {
+  text-decoration: none;
+}
