@@ -188,7 +188,7 @@ nocibe = Brand.create!(
 loreal = Brand.create!(
 
   name: "L'Oréal",
-  color: '#8D8E8E',
+  color: '#000000',
   logo: "https://i.pinimg.com/originals/ec/25/31/ec253145f67cf3ef95ee2d45d2172c32.png"
 )
 
