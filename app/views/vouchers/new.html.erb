@@ -86,7 +86,7 @@
 
     <h3 class="title">Marque</h3>
 
-    <select name="brand_id" id="brand-select">
+    <select name="brand_id" id="brand-select" class="select2">
       <option value=""></option>
       <% @brands.each do |brand| %>
         <option value="<%= brand.id %>"><%= brand.name %></option>
