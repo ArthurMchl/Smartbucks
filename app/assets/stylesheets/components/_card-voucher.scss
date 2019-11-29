@@ -16,12 +16,17 @@
       justify-content: center;
       border-radius: 16px;
 
+    .logo-container{
+      width: 80%;
+      height: 50%;
+      margin-top: 16px;
+    }
+
         .logo{
           background-repeat: no-repeat;
           background-size: contain;
-          height: 50%;
-          width: 80%;
-          margin-top: 16px;
+          // height: 100%;
+          // width: 100%;
         }
 
     }
