@@ -15,15 +15,7 @@
     <% else %>
       <%= form_tag orders_path do %>
         <%= hidden_field_tag 'voucher_id', @voucher.id %>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <%= submit_tag 'Payer',  class: 'btn-white', style: "color: #{voucher.brand.color}"%>
-=======
         <%= submit_tag "Payer #{voucher.price} €", class: 'btn-white', style: "color: #{voucher.brand.color}"%>
->>>>>>> 15c6368a9d841e370bcae90bca323bfd521939f0
-=======
-        <%= submit_tag "Payer #{voucher.price} €", class: 'btn-white', style: "color: #{voucher.brand.color}"%>
->>>>>>> 11e4419839b40d335d8787e954c66bcdda59bae6
       <% end %>
     <% end %>
   </div>

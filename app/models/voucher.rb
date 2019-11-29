@@ -11,7 +11,7 @@ class Voucher < ApplicationRecord
   validates :category, inclusion: CATEGORIES
 
   def pourcentage
-    x = ((price * 100) / value)
+    x = (price_cents / value)
     pourcent = ((1 - (x.fdiv(100))) * 100).round
     return pourcent
   end
