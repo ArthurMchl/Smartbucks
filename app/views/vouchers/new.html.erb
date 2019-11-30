@@ -66,10 +66,10 @@
       </select>
 
       <h3 class="title">Jusqu'au</h3>
-      <input type="date" name="end_date">
+      <input type="date" name="end_date", class="container-textbox">
 
       <h3 class="title">Numéro de code barre</h3>
-      <input type="text" name="bar_code">
+      <input type="text" name="bar_code" class="container-textbox">
 
       <div class="position-bottom">
 
@@ -105,9 +105,11 @@
     <%= f.input :brand, as: :hidden, input_html: {value: params[:brand_id]} %>
     <%= f.input :end_date, as: :hidden, input_html: { value: params[:end_date], id: 'end_date' } %>
     <%= f.input :bar_code, as: :hidden, input_html: { value: params[:bar_code] } %>
-    <%= f.input :value, as: :integer, label: "Valeur du bon", :label_html => { :class => 'title-label' },:input_html => { :class => 'text-value' } %>
+    <%= f.input :value, as: :integer, label: "Valeur du bon", :label_html => { :class => 'title-label' },
+                :input_html => { :class => 'text-value container-textbox' } %>
     <p id="price-advice" class=""></p>
-    <%= f.input :price, as: :integer, label: 'Prix à la vente', :label_html => { :class => 'title-label' } %>
+    <%= f.input :price, as: :integer, label: 'Prix à la vente', :label_html => { :class => 'title-label'},
+                :input_html => { :class => 'container-textbox' } %>
 
 
     <div class="position-bottom">
