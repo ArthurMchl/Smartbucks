@@ -1,16 +1,23 @@
 <div class="container">
   <div class="row py-4">
-    <div class="col-md-3"><%= image_tag @order.voucher.brand.logo, width: '100%' %></div>
+
     <div class="col">
-      <h1>Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
+     <h2> statut : <small><span class="badge badge-primary"><%= @order.state %></span></small></h2>
+     <br>
       <ul class="list-unstyled">
-        <li><strong>ISSUED ON</strong> <%= @order.created_at.to_date %></li>
-        <li><strong>VOUCHER</strong> <%= @order.voucher.brand.name %> </li>
-        <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
+        <li><strong>Publié le :</strong> <%= parse_date_fr(@order.created_at.to_date) %></li>
+        <li><strong>Bon :</strong> <%= @order.voucher.brand.name %> </li>
+        <li><strong>Total :</strong> <%= humanized_money_with_symbol @order.amount %></li>
         </li>
       </ul>
+      <br>
       <p>Votre achat été effectué !</strong></p>
-     <span class = "btn"> <%= link_to "Retour à mes annonces", profile_path  %> </span>
-    </div>
+      <br>
+   <div class="selling-button">
+    <%= link_to profile_path, class: "button button-large-height" do %>
+    Retour à mes annonces
+    <% end %>
+  </div>
+
   </div>
 </div>
