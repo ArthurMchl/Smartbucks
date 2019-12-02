@@ -1,6 +1,6 @@
 <div class="container-voucher" style="background-color: <%= voucher.brand.color %>">
-  <div class =logo>
-    <img id="logo" src= <%= voucher.brand.logo%> >
+  <div class ="logo-mark">
+    <%= image_tag voucher.brand.logo, height: '80%', width: '80%', id:"logo"  %>
   </div>
   <% if voucher.user == current_user %>
     <h1>Votre bon est en ligne !</h1>

@@ -1,4 +1,8 @@
-.card-voucher{
+.card-voucher-link:hover {
+  text-decoration: none;
+}
+
+.card-voucher {
   justify-content: center;
   height: 200px;
   width:  150px;
@@ -27,7 +31,6 @@
           height: 100%;
           width: 100%;
         }
-
     }
 
     .details{
@@ -78,3 +81,5 @@
 .card-voucher a:hover{
   text-decoration: none;
 }
+
+

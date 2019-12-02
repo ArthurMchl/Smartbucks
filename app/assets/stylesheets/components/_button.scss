@@ -17,13 +17,20 @@
 }
 
 .button-small-height {
-  height: 45px;
-  width: 320px;
-  vertical-align: center;
-  display: flex;
+  height:          45px;
+  width:           320px;
+  margin:          0;
+  display:         flex;
+  vertical-align:  center;
   justify-content: center;
-  align-items: center;
-  margin: 0;
+  align-items:     center;
+  &.very-small {
+    width: 140px;
+  }
+  &.margin {
+    margin-left:  10px;
+    margin-right: 10px;
+  }
 }
 
 .button-small-height-width {
@@ -32,7 +39,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
+  margin: 0 auto;
 }
 
 input[type="submit" i] {
@@ -76,7 +83,12 @@ input[type="submit" i] {
   margin-top: 40px;
 }
 
-#pay  {
-  margin: 0 auto;
-
+.div-fixed-bottom {
+  height:          100px;
+  width:           100vw;
+  position:        fixed;
+  display:         flex;
+  justify-content: center;
+  bottom:          0;
+  left:            0;
 }
