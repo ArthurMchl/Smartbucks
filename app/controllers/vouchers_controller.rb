@@ -49,7 +49,7 @@ class VouchersController < ApplicationController
     @voucher = voucher_set_id
     @voucher.update(voucher_params)
     if @voucher.save
-      redirect_to voucher_path(@voucher)
+      redirect_to voucher_path(@voucher, display_confirmation_message: true)
     else
       render :edit
     end
