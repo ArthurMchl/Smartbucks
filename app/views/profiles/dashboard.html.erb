@@ -2,7 +2,7 @@
 <h1 class="title">Mes Achats</h1>
       <div class="index-grid">
           <% @orders.each_slice(2).to_a.each do |orders| %>
-            <% @orders.each do |order| %>
+            <% orders.each do |order| %>
             <div><%= render "vouchers/card_order", order: order %></div>
             <% end %>
           <% end %>
