@@ -1,7 +1,7 @@
 <%= render 'shared/search_bar' %>
 
 <div class="index-grid">
-  <% @vouchers.each_slice(2).to_a.each do |vouchers| %>
+  <% @vouchers.each_slice(mobile_device? ? 2 : 4).to_a.each do |vouchers| %>
       <% vouchers.each do |voucher|%>
 
          <div> <%= render 'vouchers/card', voucher: voucher %> </div>
