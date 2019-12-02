@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :vouchers do
-    resources :orders, only: [:new, :create, :show]
+    resources :orders, only: [:new, :create]
     get 'publish', on: :member
   end
 

@@ -1,120 +1,133 @@
 
 <% if params[:step] == "1" %>
 
-  <div class="container-form">
+<div class="container-form">
 
-    <svg class="img-svg" width="338" height="60" viewBox="0 0 338 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="11" cy="49" r="11" fill="#4DD599"/>
-      <circle cx="169" cy="49" r="11" fill="#E9E9E9"/>
-      <circle cx="327" cy="49" r="11" fill="#E9E9E9"/>
-      <path d="M22 49L158 49" stroke="#E9E9E9" stroke-width="5"/>
-      <line x1="180" y1="49.5" x2="316" y2="49.5" stroke="#E9E9E9" stroke-width="5"/>
-    </svg>
+  <svg class="img-svg" width="338" height="60" viewBox="0 0 338 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="11" cy="49" r="11" fill="#4DD599"/>
+    <circle cx="169" cy="49" r="11" fill="#E9E9E9"/>
+    <circle cx="327" cy="49" r="11" fill="#E9E9E9"/>
+    <path d="M22 49L158 49" stroke="#E9E9E9" stroke-width="5"/>
+    <line x1="180" y1="49.5" x2="316" y2="49.5" stroke="#E9E9E9" stroke-width="5"/>
+  </svg>
 
-    <h3 class= "title">Choisissez une catégorie</h3>
+  <h3 class= "title">Choisissez une catégorie</h3>
 
-    <div class="container-buttons-list text-center">
-      <%= link_to new_voucher_path(category: 'Carte Cadeau', step: 2), class:"button button-small-height button-form"  do %>
-        Carte Cadeau
+  <div class="container-buttons-list text-center">
+    <%= link_to new_voucher_path(category: 'Carte Cadeau', step: 2), class:"button button-small-height button-margin-top"  do %>
+    Carte Cadeau
+    <% end %>
+
+    <%= link_to new_voucher_path(category: 'Chèque Cadeau', step: 2), class:"button button-small-height button-margin-top"  do %>
+    Chèque Cadeau
+    <% end %>
+
+    <%= link_to new_voucher_path(category: 'Coffret Cadeau', step: 2), class:"button button-small-height button-margin-top"  do %>
+    Coffret Cadeaux
+    <% end %>
+
+    <%= link_to new_voucher_path(category: 'Avoir', step: 2), class:"button button-small-height button-margin-top"  do %>
+    Avoir
+    <% end %>
+
+    <div class="div-fixed-bottom">
+      <%= link_to root_path, class:"button button-small-height"  do %>
+      Retour
       <% end %>
-
-      <%= link_to new_voucher_path(category: 'Chèque Cadeau', step: 2), class:"button button-small-height button-form"  do %>
-        Chèque Cadeau
-      <% end %>
-
-      <%= link_to new_voucher_path(category: 'Coffret Cadeau', step: 2), class:"button button-small-height button-form"  do %>
-        Coffret Cadeaux
-      <% end %>
-
-      <%= link_to new_voucher_path(category: 'Avoir', step: 2), class:"button button-small-height button-form"  do %>
-        Avoir
-      <% end %>
-
-      <div class="div-fixed-bottom">
-        <%= link_to root_path, class:"button button-small-height button-form"  do %>
-          Retour
-        <% end %>
-      </div>
     </div>
   </div>
+</div>
 
 <% elsif params[:step] == "2" %>
 
-  <div class="container-form">
-    <svg width="338" height="60" viewBox="0 0 338 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="11" cy="49" r="11" fill="#4DD599"/>
-      <circle cx="169" cy="49" r="11" fill="#4DD599"/>
-      <circle cx="327" cy="49" r="11" fill="#E9E9E9"/>
-      <path d="M22 49H158" stroke="#4DD599" stroke-width="5"/>
-      <path d="M180 49L317 49" stroke="#E9E9E9" stroke-width="5"/>
-    </svg>
+<div class="container-form">
+  <svg class="img-svg" width="338" height="60" viewBox="0 0 338 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="11" cy="49" r="11" fill="#4DD599"/>
+    <circle cx="169" cy="49" r="11" fill="#4DD599"/>
+    <circle cx="327" cy="49" r="11" fill="#E9E9E9"/>
+    <path d="M22 49H158" stroke="#4DD599" stroke-width="5"/>
+    <path d="M180 49L317 49" stroke="#E9E9E9" stroke-width="5"/>
+  </svg>
 
 
-    <form>
+  <form>
 
-      <input type="text" class="d-none" name="category" value="<%= params[:category] %>">
-      <input type="text" class="d-none" name="step" value="<%= params[:step].to_i + 1 %>">
+    <input type="text" class="d-none" name="category" value="<%= params[:category] %>">
+    <input type="text" class="d-none" name="step" value="<%= params[:step].to_i + 1 %>">
 
-      <h3 class="title">Marque</h3>
+    <h3 class="title">Marque</h3>
 
-      <select name="brand_id" id="brand-select" class="select2">
-        <option value=""></option>
-        <% @brands.each do |brand| %>
-        <option value="<%= brand.id %>"><%= brand.name %></option>
-        <% end %>
-      </select>
+    <select name="brand_id" id="brand-select" class="container-select">
+      <option value=""></option>
+      <% @brands.each do |brand| %>
+      <option value="<%= brand.id %>"><%= brand.name %></option>
+      <% end %>
+    </select>
 
-      <h3 class="title">Jusqu'au</h3>
-      <input type="date" name="end_date", class="container-textbox">
+    <h3 class="title">Jusqu'au</h3>
 
-      <h3 class="title">Numéro de code barre</h3>
-      <input type="text" name="bar_code" class="container-textbox">
-
-      <div class="div-fixed-bottom">
-
-        <%= link_to 'Précedent', new_voucher_path(step: 1), class:"button button-small-height very-small margin button-form" %>
-
-        <input type="submit" value="Suivant" class="button button-small-height very-small margin button-form">
-
+    <div class="container-textbox">
+      <div class="container-textbox-icon">
+        <i class="fas fa-table"></i>
       </div>
-    </form>
-  </div>
+      <input type="date" name="end_date", class="container-textbox-text">
+    </div>
+
+
+    <h3 class="title">Numéro de code barre</h3>
+
+    <div class="container-textbox">
+      <div class="container-textbox-icon">
+        <i class="fas fa-barcode fa-barcode-small"></i>
+      </div>
+      <input type="text" name="bar_code" class="container-textbox-text">
+    </div>
+
+
+    <div class="div-fixed-bottom">
+
+      <%= link_to 'Précedent', new_voucher_path(step: 1), class:"button button-small-height-width" %>
+
+      <input type="submit" value="Suivant" class="button button-small-height-width">
+
+    </div>
+  </form>
+</div>
 
 <% elsif params[:step] == "3" %>
 
-  <div class="container-form">
+<div class="container-form">
 
-    <svg width="338" height="60" viewBox="0 0 338 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="11" cy="49" r="11" fill="#4DD599"/>
-      <circle cx="169" cy="49" r="11" fill="#4DD599"/>
-      <circle cx="327" cy="49" r="11" fill="#4DD599"/>
-      <path d="M22 49H158.5" stroke="#4DD599" stroke-width="5"/>
-      <line x1="180" y1="48.5" x2="316" y2="48.5" stroke="#4DD599" stroke-width="5"/>
-    </svg>
-
-
-
-    <%= simple_form_for [@voucher] do |f| %>
-
-      <%= f.input :category, as: :hidden, input_html: { value: params[:category] } %>
-      <%= f.input :brand, as: :hidden, input_html: {value: params[:brand_id]} %>
-      <%= f.input :end_date, as: :hidden, input_html: { value: params[:end_date], id: 'end_date' } %>
-      <%= f.input :bar_code, as: :hidden, input_html: { value: params[:bar_code] } %>
-      <%= f.input :value, as: :integer, label: "Valeur du bon", :label_html => { :class => 'title-label' },
-      :input_html => { :class => 'text-value container-textbox' } %>
-      <p id="price-advice" class=""></p>
-      <%= f.input :price, as: :integer, label: 'Prix à la vente', :label_html => { :class => 'title-label'},
-      :input_html => { :class => 'container-textbox' } %>
+  <svg class="img-svg" width="338" height="60" viewBox="0 0 338 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="11" cy="49" r="11" fill="#4DD599"/>
+    <circle cx="169" cy="49" r="11" fill="#4DD599"/>
+    <circle cx="327" cy="49" r="11" fill="#4DD599"/>
+    <path d="M22 49H158.5" stroke="#4DD599" stroke-width="5"/>
+    <line x1="180" y1="48.5" x2="316" y2="48.5" stroke="#4DD599" stroke-width="5"/>
+  </svg>
 
 
-      <div class="div-fixed-bottom">
-        <%= link_to 'Précedent', new_voucher_path(step: 1), class:"button button-small-height very-small margin button-form" %>
-        <%= f.submit 'Valider', class: "button button-small-height very-small margin button-form" %>
-      </div>
-
-    <% end %>
-
-    <div id="voucher_count" data-vc="<%= @vc %>"></div>
+  <%= simple_form_for [@voucher] do |f| %>
+  <div class="container-price-value">
+    <%= f.input :category, as: :hidden, input_html: { value: params[:category] } %>
+    <%= f.input :brand, as: :hidden, input_html: {value: params[:brand_id]} %>
+    <%= f.input :end_date, as: :hidden, input_html: { value: params[:end_date], id: 'end_date' } %>
+    <%= f.input :bar_code, as: :hidden, input_html: { value: params[:bar_code] } %>
+    <%= f.input :value, as: :integer, label: "Valeur du bon", :label_html => { :class => 'title' },
+    :input_html => { :class => 'text-value container-textbox' } %>
+    <p id="price-advice" clas"></p>
+    <%= f.input :price, as: :integer, label: 'Prix à la vente', :label_html => { :class => 'title'},
+    :input_html => { :class => 'container-textbox' } %>
   </div>
+
+  <div class="div-fixed-bottom">
+    <%= link_to 'Précedent', new_voucher_path(step: 1), class:"button button-small-height-width" %>
+    <%= f.submit 'Valider', class: "button button-small-height-width" %>
+  </div>
+
+  <% end %>
+
+  <div id="voucher_count" data-vc="<%= @vc %>"></div>
+</div>
 <% end %>
 

@@ -3,36 +3,40 @@
     <%= image_tag voucher.brand.logo, height: '80%', width: '80%', id:"logo"  %>
   </div>
   <% if voucher.user == current_user %>
-    <h1>Votre bon est en ligne !</h1>
+  <h1>Votre bon est en ligne !</h1>
   <% end %>
   <h2> - <%= voucher.pourcentage%> %</h1>
-  <h1> valeur en magasin : <%= voucher.value%> €</h1>
-  <h1> type : <%= voucher.category %> </h1>
-  <h1> expiration : <%= parse_date_fr(voucher.end_date)%></h1>
+    <h1> valeur en magasin : <%= voucher.value%> €</h1>
+    <h1> type : <%= voucher.category %> </h1>
+    <h1> expiration : <%= parse_date_fr(voucher.end_date)%></h1>
 
-  <div class ="b">
     <% if voucher.user == current_user %>
     <% else %>
+    <div class="div-fixed-bottom">
       <%= form_tag orders_path do %>
-        <%= hidden_field_tag 'voucher_id', @voucher.id %>
-        <%= submit_tag "Payer #{voucher.price} €", class: 'btn-white', style: "color: #{voucher.brand.color}"%>
+      <%= hidden_field_tag 'voucher_id', @voucher.id %>
+      <%= submit_tag "Payer #{voucher.price} €", class: 'btn-white', style: "color: #{voucher.brand.color}"%>
       <% end %>
+
       <div class = "retour mt-5"> <%= link_to "Retour aux annonces", vouchers_path  %> </div>
     <% end %>
   </div>
 
   <% if voucher.user == current_user %>
+
       <div class = "barcode">
-      <%=  image_tag "barcode.png", height: '65', width: '100%'   %>
+        <%=  image_tag "barcode.png", height: '65', width: '100%'   %>
       </div>
-      <div class="footer">
+
+      <div class="m-5">
         <%= link_to edit_voucher_path(@voucher) do %>
-          <i class="fas fa-edit text-white"></i>
+        <i class="fas fa-edit text-white mr-5"></i>
         <% end %>
         <span class = "retour"> <%= link_to "Retour à mes annonces", profile_path  %> </span>
         <%= link_to voucher_path(voucher), method: :delete, data: { confirm: "Are you sure?" } do %>
-          <i class="fas fa-trash text-white"></i>
+        <i class="fas fa-trash text-white ml-5"></i>
         <% end %>
       </div>
-  <% end %>
-</div>
+    </div>
+    <% end %>
+  </div>
