@@ -4,14 +4,17 @@
   grid-gap:              40px 10px;
 }
 
-.div-fixed-bottom{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-}
-
 .container-voucher h1 ,.container-voucher h2 {
   margin: 10px;
 }
 
+.flex-direct-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-direct-column {
+  display: flex;
+  align-items:center;
+  flex-direction: column;
+}
