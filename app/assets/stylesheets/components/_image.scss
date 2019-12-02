@@ -1,20 +1,22 @@
 #logo {
 }
 
-.container-voucher .logo-mark {
+.logo-mark img {
   text-align: center;
-  margin: 10px auto;
+  margin-top: 10px;
 }
 
-
-.fa-barcode {
+.fa-barcode-large {
     font-size: 250px !important;
+}
+
+.fa-barcode-small {
+    font-size: 32px !important;
 }
 
 .barcode  {
   margin: 0 auto;
   width: 90%;
-  margin-bottom: 75px;
 }
 
 .logo-marks {

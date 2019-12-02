@@ -1,0 +1,14 @@
+.container-select {
+    font-size: 20px;
+    width: 350px;
+    height: 40px;
+    border: solid 2px var(--component-color);
+    border-radius: 8px;
+    background-color: var(--component-backcolor);
+    color: var(--component-colorfont);
+}
+
+.container-select:focus {
+    outline: none;
+    font-size: 20px;
+}
