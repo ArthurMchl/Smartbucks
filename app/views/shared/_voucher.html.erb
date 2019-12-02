@@ -17,11 +17,13 @@
       <%= hidden_field_tag 'voucher_id', @voucher.id %>
       <%= submit_tag "Payer #{voucher.price} €", class: 'btn-white', style: "color: #{voucher.brand.color}"%>
       <% end %>
+
       <% end %>
     </div>
       <% if voucher.user == current_user %>
       <div class = "div-fixed-bottom barcode mb-3">
         <%=  image_tag "barcode.png", height: '65', width: '90%'   %>
+
 
 
       <div class="mt-3">
