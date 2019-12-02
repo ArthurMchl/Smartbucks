@@ -6,10 +6,32 @@
   <% if voucher.user == current_user && params[:display_confirmation_message] == "true" %>
     <h1>Votre bon est en ligne !</h1>
   <% end %>
+<<<<<<< HEAD:app/views/shared/_voucher.html.erb
+  <h2> - <%= voucher.pourcentage%> %</h1>
+    <h1> valeur en magasin : <%= voucher.value%> €</h1>
+    <h1> type : <%= voucher.category %> </h1>
+    <h1> expiration : <%= parse_date_fr(voucher.end_date)%></h1>
+
+    <% if voucher.user == current_user %>
+    <% else %>
+    <div class="div-fixed-bottom">
+      <%= form_tag orders_path do %>
+      <%= hidden_field_tag 'voucher_id', @voucher.id %>
+      <%= submit_tag "Payer #{voucher.price} €", class: 'btn-white', style: "color: #{voucher.brand.color}"%>
+      <% end %>
+        <span class = "retour"> <%= link_to "Retour aux annonces", vouchers_path  %> </span>
+    <% end %>
+
+    </div>
+      <% if voucher.user == current_user %>
+      <div class = "div-fixed-bottom barcode mb-3 flex-direct-column">
+        <%=  image_tag "barcode.png", height: '65', width: '90%'   %>
+=======
   <h2> - <%= voucher.pourcentage %> %</h2>
   <h1> valeur en magasin : <%= voucher.value%> €</h1>
   <h1> type : <%= voucher.category %> </h1>
   <h1> expiration : <%= parse_date_fr(voucher.end_date)%></h1>
+>>>>>>> b1c53aa4de0b6497a960368c619e69128f111872:app/views/vouchers/_show.html.erb
 
   <% if voucher.user == current_user %>
     <div class = "div-fixed-bottom barcode mb-3 flex-direct-column">
