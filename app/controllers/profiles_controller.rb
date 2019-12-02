@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   def dashboard
-    @vouchers = Voucher.where(user_id: @user)
-    @user = current_user
+    @vouchers = current_user.vouchers
+    @orders = current_user.orders
   end
 end
