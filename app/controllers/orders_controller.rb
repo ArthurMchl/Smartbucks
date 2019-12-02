@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
         currency: 'eur',
         quantity: 1
       }],
-      success_url: order_url(order),
+      success_url: order_url(order, display_confirmation_message: true),
       cancel_url: order_url(order)
     )
 
