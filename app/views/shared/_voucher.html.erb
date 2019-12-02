@@ -20,11 +20,11 @@
       <% end %>
     </div>
       <% if voucher.user == current_user %>
-      <div class = "barcode">
-        <%=  image_tag "barcode.png", height: '65', width: '100%'   %>
-      </div>
+      <div class = "div-fixed-bottom barcode mb-3">
+        <%=  image_tag "barcode.png", height: '65', width: '90%'   %>
 
-      <div class="m-5">
+
+      <div class="mt-3">
         <%= link_to edit_voucher_path(@voucher) do %>
         <i class="fas fa-edit text-white mr-5"></i>
         <% end %>
@@ -32,6 +32,7 @@
         <%= link_to voucher_path(voucher), method: :delete, data: { confirm: "Are you sure?" } do %>
         <i class="fas fa-trash text-white ml-5"></i>
         <% end %>
+      </div>
       </div>
     </div>
     <% end %>
