@@ -1,37 +1,39 @@
 <div class="container-voucher" style="background-color: <%= voucher.brand.color %>">
-  <div class ="logo-mark">
-    <%= image_tag voucher.brand.logo, height: '80%', width: '80%', id:"logo"  %>
-  </div>
-  <% if voucher.user == current_user %>
-    <h1>Votre bon est en ligne !</h1>
-  <% end %>
-  <h2> - <%= voucher.pourcentage%> %</h1>
-  <h1> valeur en magasin : <%= voucher.value%> €</h1>
-  <h1> type : <%= voucher.category %> </h1>
-  <h1> expiration : <%= parse_date_fr(voucher.end_date)%></h1>
-
-  <div class ="b">
+    <div class ="logo-mark">
+      <%= image_tag voucher.brand.logo, height: '80%', width: '80%', id:"logo"  %>
+    </div>
     <% if voucher.user == current_user %>
-    <% else %>
-      <%= form_tag orders_path do %>
-        <%= hidden_field_tag 'voucher_id', @voucher.id %>
-        <%= submit_tag "Payer #{voucher.price} €", class: 'btn-white', style: "color: #{voucher.brand.color}"%>
-      <% end %>
+    <h1>Votre bon est en ligne !</h1>
     <% end %>
-  </div>
+    <h2> - <%= voucher.pourcentage%> %</h1>
+      <h1> valeur en magasin : <%= voucher.value%> €</h1>
+      <h1> type : <%= voucher.category %> </h1>
+      <h1> expiration : <%= parse_date_fr(voucher.end_date)%></h1>
 
-  <% if voucher.user == current_user %>
+      <div class ="b">
+        <% if voucher.user == current_user %>
+        <% else %>
+        <div class="div-fixed-bottom">
+          <%= form_tag orders_path do %>
+          <%= hidden_field_tag 'voucher_id', @voucher.id %>
+          <%= submit_tag "Payer #{voucher.price} €", class: 'btn-white', style: "color: #{voucher.brand.color}"%>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+
+      <% if voucher.user == current_user %>
       <div class = "barcode">
-      <%=  image_tag "barcode.png", height: '65', width: '100%'   %>
+        <%=  image_tag "barcode.png", height: '65', width: '100%'   %>
       </div>
       <div class="footer">
         <%= link_to edit_voucher_path(@voucher) do %>
-          <i class="fas fa-edit text-white"></i>
+        <i class="fas fa-edit text-white"></i>
         <% end %>
         <span class = "retour"> <%= link_to "Retour à mes annonces", vouchers_path  %> </span>
         <%= link_to voucher_path(voucher), method: :delete, data: { confirm: "Are you sure?" } do %>
-          <i class="fas fa-trash text-white"></i>
+        <i class="fas fa-trash text-white"></i>
         <% end %>
       </div>
-  <% end %>
-</div>
+      <% end %>
+  </div>
