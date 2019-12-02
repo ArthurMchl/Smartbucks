@@ -12,6 +12,7 @@
 @import "components/index";
 @import "components/button";
 @import "components/textbox";
+@import "components/select";
 @import "components/text";
 @import "pages/index";
 @import "pages/home";
@@ -29,12 +30,21 @@
     box-sizing: content-box;
 }
 
-body {
+body, html {
   background-color: white;
 }
 
 h1 ,h2 ,h3 ,h4, h5, h6, p ,ul, li, .fas {
-    margin: 0;
+    margin: 0px;
+}
+
+a {
+  color: grey;
+}
+
+a :hover{
+  text-decoration: none;
+    color: grey;
 }
 
 input[type=submit] {
