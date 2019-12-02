@@ -4,7 +4,7 @@
   <% @vouchers.each_slice(2).to_a.each do |vouchers| %>
       <% vouchers.each do |voucher|%>
 
-          <%= render 'vouchers/card', voucher: voucher %>
+         <div> <%= render 'vouchers/card', voucher: voucher %> </div>
 
       <% end %>
   <% end %>
