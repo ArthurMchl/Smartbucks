@@ -1,23 +1,22 @@
-<div class="container">
-  <div class="row py-4">
-
-    <div class="col">
-     <h2> statut : <small><span class="badge badge-primary"><%= @order.state %></span></small></h2>
-     <br>
+<div class="container-voucher" style="background-color: <%= @order.voucher.brand.color %>" >
+  <div class =logo>
+    <img id="logo" src= <%= @order.voucher.brand.logo%> >
+  </div>
+      <h1>Votre achat a été effectué !</h1>
+     <h1>Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
       <ul class="list-unstyled">
-        <li><strong>Publié le :</strong> <%= parse_date_fr(@order.created_at.to_date) %></li>
-        <li><strong>Bon :</strong> <%= @order.voucher.brand.name %> </li>
-        <li><strong>Total :</strong> <%= humanized_money_with_symbol @order.amount %></li>
-        </li>
-      </ul>
-      <br>
-      <p>Votre achat été effectué !</strong></p>
-      <br>
-   <div class="selling-button">
-    <%= link_to profile_path, class: "button button-large-height" do %>
-    Retour à mes annonces
-    <% end %>
-  </div>
-
-  </div>
+    <br>
+    <br>
+  <h2> - <%= @order.voucher.pourcentage%> %</h1>
+  <h1> valeur en magasin : <%= @order.voucher.value%> €</h1>
+  <h1> type : <%= @order.voucher.category %> </h1>
+  <h1> expiration : <%= parse_date_fr(@order.voucher.end_date)%></h1>
+<br>
+<br>
+      <div class = "barcode">
+      <%=  image_tag "barcode.png", height: '65', width: '100%'   %>
+      </div>
+      <div class="footer">
+        <span class = "retour"> <%= link_to "Retour à mes annonces", profile_path  %> </span>
+      </div>
 </div>
