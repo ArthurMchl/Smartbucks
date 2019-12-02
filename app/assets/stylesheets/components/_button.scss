@@ -58,23 +58,12 @@
 .div-fixed-bottom {
   height:          100px;
   width:           100vw;
-  position:        fixed;
+  position:        absolute;
   display:         flex;
   justify-content: center;
   bottom:          0;
   left:            0;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 input[type="submit" i] {
   padding: 0 !important;
