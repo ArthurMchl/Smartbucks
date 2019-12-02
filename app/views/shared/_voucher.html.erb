@@ -19,8 +19,6 @@
       <% end %>
       <% end %>
     </div>
-
-    <div class="div-fixed-bottom flex-column">
       <% if voucher.user == current_user %>
       <div class = "barcode">
         <%=  image_tag "barcode.png", height: '65', width: '100%'   %>
@@ -30,7 +28,7 @@
         <%= link_to edit_voucher_path(@voucher) do %>
         <i class="fas fa-edit text-white mr-5"></i>
         <% end %>
-        <span class = "retour"> <%= link_to "Retour à mes annonces", vouchers_path  %> </span>
+        <span class = "retour"> <%= link_to "Retour à mes annonces", profile_path  %> </span>
         <%= link_to voucher_path(voucher), method: :delete, data: { confirm: "Are you sure?" } do %>
         <i class="fas fa-trash text-white ml-5"></i>
         <% end %>
