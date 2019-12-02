@@ -1,10 +1,15 @@
 .button {
-    color: var(--button-colorfont);
-    background-color:var(--button-backcolor);
-    border-radius: 12px;
-    font-size: 20px;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
+  color: var(--button-colorfont);
+  background-color:var(--button-backcolor);
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+.button:hover {
+  text-decoration: none;
+  color: var(--button-colorfont);
 }
 
 .button-large-height {
@@ -21,47 +26,24 @@
   width:           320px;
   margin:          0;
   display:         flex;
-  vertical-align:  center;
   justify-content: center;
   align-items:     center;
-  &.very-small {
-    width: 140px;
-  }
-  &.margin {
-    margin-left:  10px;
-    margin-right: 10px;
-  }
 }
 
 .button-small-height-width {
   height: 45px;
   width: 140px;
+  margin: 0 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
 }
 
-input[type="submit" i] {
-  padding: 0 !important;
-}
-
-.button:hover {
-    text-decoration: none;
-    color: var(--button-colorfont);
-}
-
-.button i {
-    margin: 0 20px;
-}
-
-.button-form{
+.button-margin-top {
   margin-top: 20px;
 }
 
-
-
-.container-voucher .btn-white {
+.btn-white {
   font-size: 30px;
   font-weight: bold;
   border-color: white;
@@ -69,26 +51,56 @@ input[type="submit" i] {
   background-color: white;
   width: 300px;
   height: 68px;
-  border-radius: 5px;
+  border-radius: 12px;
   padding: 10px 10px;
-}
-
-.b {
-  margin-top: 120px;
-}
-
-.position-bottom {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 40px;
 }
 
 .div-fixed-bottom {
   height:          100px;
   width:           100vw;
-  position:        fixed;
+  position:        absolute;
   display:         flex;
   justify-content: center;
   bottom:          0;
   left:            0;
 }
+
+.flex-column {
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input[type="submit" i] {
+  padding: 0 !important;
+}
+
+
+
+.button i {
+  margin: 0 20px;
+}
+
+
+
+
+
+
+.b {
+  margin-top: 120px;
+}
+
+
+
