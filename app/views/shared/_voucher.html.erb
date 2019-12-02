@@ -17,6 +17,7 @@
       <%= hidden_field_tag 'voucher_id', @voucher.id %>
       <%= submit_tag "Payer #{voucher.price} €", class: 'btn-white', style: "color: #{voucher.brand.color}"%>
       <% end %>
+        <span class = "retour"> <%= link_to "Retour aux annonces", vouchers_path  %> </span>
     <% end %>
     </div>
       <% if voucher.user == current_user %>
