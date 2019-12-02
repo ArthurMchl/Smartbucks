@@ -2,18 +2,16 @@
   <div class ="logo-mark">
     <%= image_tag @order.voucher.brand.logo, height: '80%', width: '80%', id:"logo"  %>
   </div>
-      <h1>Votre achat a été effectué !</h1>
-     <h1>Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
-      <ul class="list-unstyled">
+  <h1>Votre achat a été effectué !</h1>
+  <h1>Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
+  <ul class="list-unstyled">
 
-  <h2> - <%= @order.voucher.pourcentage%> %</h1>
-  <h1> valeur en magasin : <%= @order.voucher.value%> €</h1>
-  <h1> type : <%= @order.voucher.category %> </h1>
-  <h1> expiration : <%= parse_date_fr(@order.voucher.end_date)%></h1>
-
+    <h2> - <%= @order.voucher.pourcentage%> %</h1>
+      <h1> valeur en magasin : <%= @order.voucher.value%> €</h1>
+      <h1> type : <%= @order.voucher.category %> </h1>
+      <h1> expiration : <%= parse_date_fr(@order.voucher.end_date)%></h1>
       <div class = "div-fixed-bottom barcode mb-3">
-      <%=  image_tag "barcode.png", height: '65', width: '90%'   %>
+        <%=  image_tag "barcode.png", height: '65', width: '90%'   %>
 
         <span class = "retour"> <%= link_to "Retour à mes annonces", profile_path  %> </span>
-      </div>
-</div></div>
+    </div>
