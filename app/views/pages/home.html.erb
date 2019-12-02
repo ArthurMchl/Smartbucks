@@ -19,7 +19,7 @@
     <div id="topdeals">
       <p>Meilleures Offres</p>
     </div>
-      <% @vouchers.each_slice(mobile_device? ? 2 : 4).to_a.each_with_index do |vouchers, index| %>
+      <% @vouchers_top.each_slice(mobile_device? ? 2 : 4).to_a.each_with_index do |vouchers, index| %>
       <div class="carousel-item <%= "active" if index == 0 %>">
         <div class="d-flex justify-content-around mx-4">
           <% vouchers.each do |voucher| %>
@@ -42,7 +42,7 @@
     <div id="topbrands">
       <p>Par marque</p>
     </div>
-      <% @vouchers.each_slice(mobile_device? ? 2 : 4).to_a.each_with_index do |vouchers, index| %>
+      <% @vouchers_brand.each_slice(mobile_device? ? 2 : 4).to_a.each_with_index do |vouchers, index| %>
       <div class="carousel-item <%= "active" if index == 0 %>">
         <div class="d-flex justify-content-around mx-4">
           <% vouchers.each do |voucher| %>

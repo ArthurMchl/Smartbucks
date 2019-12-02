@@ -7,13 +7,14 @@ class Voucher < ApplicationRecord
   belongs_to :brand
 
   validates :price, :value, :end_date, :category, :bar_code, presence: true
-  # Créer validates status avec Stripe !
   validates :category, inclusion: CATEGORIES
+
+  scope :top, -> { order("(price_cents - value * 100) / value asc") }
+  scope :order_brand_asc, -> { joins(:brand).order("brands.name asc") }
 
   def pourcentage
     x = (price_cents / value)
     pourcent = ((1 - (x.fdiv(100))) * 100).round
     return pourcent
   end
-
 end

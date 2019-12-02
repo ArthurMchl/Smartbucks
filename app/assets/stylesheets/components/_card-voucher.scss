@@ -14,7 +14,7 @@
       height: 40%;
       display: flex;
       justify-content: center;
-      border-radius: 16px;
+      border-radius: 16px 16px 0px 0px;
 
     .logo-container{
       width: 90%;
@@ -74,8 +74,4 @@
       font-size: 14px;
     }
 
-}
-
-.card-voucher :hover {
-  text-decoration: none;
 }
