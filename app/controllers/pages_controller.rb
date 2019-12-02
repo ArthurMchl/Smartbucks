@@ -3,9 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @vouchers = Voucher.all
-    @vouchers_best_marks = Voucher.where(name: "Decathlon")
-    @vouchers_top_deals = Voucher.where("SELECT * FROM vouchers
-                                        price AS p, value AS v
-                                        ORDER BY p - v ASC")
+    @vouchers_brand = Voucher.order_brand_asc
+    @vouchers_top = Voucher.top
   end
 end
