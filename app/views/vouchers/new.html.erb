@@ -96,38 +96,38 @@
 
 <% elsif params[:step] == "3" %>
 
-<div class="container-form">
+  <div class="container-form">
 
-  <svg class="img-svg" width="338" height="60" viewBox="0 0 338 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="11" cy="49" r="11" fill="#4DD599"/>
-    <circle cx="169" cy="49" r="11" fill="#4DD599"/>
-    <circle cx="327" cy="49" r="11" fill="#4DD599"/>
-    <path d="M22 49H158.5" stroke="#4DD599" stroke-width="5"/>
-    <line x1="180" y1="48.5" x2="316" y2="48.5" stroke="#4DD599" stroke-width="5"/>
-  </svg>
+    <svg class="img-svg" width="338" height="60" viewBox="0 0 338 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11" cy="49" r="11" fill="#4DD599"/>
+      <circle cx="169" cy="49" r="11" fill="#4DD599"/>
+      <circle cx="327" cy="49" r="11" fill="#4DD599"/>
+      <path d="M22 49H158.5" stroke="#4DD599" stroke-width="5"/>
+      <line x1="180" y1="48.5" x2="316" y2="48.5" stroke="#4DD599" stroke-width="5"/>
+    </svg>
 
 
-  <%= simple_form_for [@voucher] do |f| %>
-  <div class="container-price-value">
-    <%= f.input :category, as: :hidden, input_html: { value: params[:category] } %>
-    <%= f.input :brand, as: :hidden, input_html: {value: params[:brand_id]} %>
-    <%= f.input :end_date, as: :hidden, input_html: { value: params[:end_date], id: 'end_date' } %>
-    <%= f.input :bar_code, as: :hidden, input_html: { value: params[:bar_code] } %>
-    <%= f.input :value, as: :integer, label: "Valeur du bon", :label_html => { :class => 'title' },
-    :input_html => { :class => 'text-value container-textbox' } %>
-    <p id="price-advice" clas"></p>
-    <%= f.input :price, as: :integer, label: 'Prix à la vente', :label_html => { :class => 'title'},
-    :input_html => { :class => 'container-textbox' } %>
+    <%= simple_form_for [@voucher] do |f| %>
+      <div class="container-price-value">
+        <%= f.input :category, as: :hidden, input_html: { value: params[:category] } %>
+        <%= f.input :brand, as: :hidden, input_html: {value: params[:brand_id]} %>
+        <%= f.input :end_date, as: :hidden, input_html: { value: params[:end_date], id: 'end_date' } %>
+        <%= f.input :bar_code, as: :hidden, input_html: { value: params[:bar_code] } %>
+        <%= f.input :value, as: :integer, label: "Valeur du bon", :label_html => { :class => 'title' },
+        :input_html => { :class => 'text-value container-textbox' } %>
+        <p id="price-advice" clas"></p>
+        <%= f.input :price, as: :integer, label: 'Prix à la vente', :label_html => { :class => 'title'},
+        :input_html => { :class => 'container-textbox' } %>
+      </div>
+
+      <div class="div-fixed-bottom flex-direct-row">
+        <%= link_to 'Précedent', new_voucher_path(step: 1), class:"button button-small-height-width" %>
+        <%= f.submit 'Valider', class: "button button-small-height-width" %>
+      </div>
+
+    <% end %>
+
+    <div id="voucher_count" data-vc="<%= @vc %>"></div>
   </div>
-
-  <div class="div-fixed-bottom flex-direct-row">
-    <%= link_to 'Précedent', new_voucher_path(step: 1), class:"button button-small-height-width" %>
-    <%= f.submit 'Valider', class: "button button-small-height-width" %>
-  </div>
-
-  <% end %>
-
-  <div id="voucher_count" data-vc="<%= @vc %>"></div>
-</div>
 <% end %>
 
