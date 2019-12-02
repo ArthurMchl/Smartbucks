@@ -16,16 +16,10 @@
       <%= form_tag orders_path do %>
       <%= hidden_field_tag 'voucher_id', @voucher.id %>
       <%= submit_tag "Payer #{voucher.price} €", class: 'btn-white', style: "color: #{voucher.brand.color}"%>
-<<<<<<< HEAD
-
-      <% end %>
-<span class = "retour"> <%= link_to "Retour", vouchers_path  %> </span>
-      <% end %>
-=======
       <% end %>
         <span class = "retour"> <%= link_to "Retour aux annonces", vouchers_path  %> </span>
     <% end %>
->>>>>>> 847ef9ff2f82642270497c12cc6b10fda08a1c33
+
     </div>
       <% if voucher.user == current_user %>
       <div class = "div-fixed-bottom barcode mb-3">
