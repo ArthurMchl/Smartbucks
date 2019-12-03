@@ -70,7 +70,7 @@
       <div class="container-textbox-icon">
         <i class="fas fa-table"></i>
       </div>
-      <input type="date" name="end_date", class="container-textbox-text">
+      <input type="date" name="end_date", class="container-textbox-text input_date">
     </div>
 
 
@@ -115,14 +115,14 @@
         <%= f.input :bar_code, as: :hidden, input_html: { value: params[:bar_code] } %>
         <%= f.input :value, as: :integer, label: "Valeur du bon", :label_html => { :class => 'title' },
         :input_html => { :class => 'text-value container-textbox' } %>
-        <p id="price-advice" clas"></p>
+        <p id="price-advice"></p>
         <%= f.input :price, as: :integer, label: 'Prix à la vente', :label_html => { :class => 'title'},
-        :input_html => { :class => 'container-textbox' } %>
+        :input_html => { :class => 'container-textbox input-price' } %>
       </div>
 
       <div class="div-fixed-bottom flex-direct-row">
         <%= link_to 'Précedent', new_voucher_path(step: 1), class:"button button-small-height-width" %>
-        <%= f.submit 'Valider', class: "button button-small-height-width" %>
+        <%= f.submit 'Valider', class:"button button-small-height-width", id:"button-validate" %>
       </div>
 
     <% end %>
