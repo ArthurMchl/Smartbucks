@@ -1,12 +1,12 @@
-const voucher_input = document.getElementById('voucher_value');
-if (voucher_input) {
+const formNewVoucher = document.getElementById('new_voucher');
 
+if (formNewVoucher) {
 
+  const voucher_input = document.getElementById('voucher_value');
   const vc = parseInt(document.getElementById('voucher_count').dataset.vc);
 
   voucher_input.addEventListener("blur", (event) => {
     const date = document.getElementById('voucher_end_date').value
-    console.log("date", date);
     const days = Math.ceil((new Date(date) - new Date()) / (60 * 60 * 24 * 1000));
     let coef_vouchers = 0
     let coef_days = 0
@@ -16,8 +16,6 @@ if (voucher_input) {
       coef_vouchers = 0.95;
     }
 
-    console.log("days", days)
-    console.log("days * 0,006", 0.006 * days)
     if (days <= 90) {
       coef_days = 0.95 - (0.006 * days);
     } else {
@@ -25,9 +23,6 @@ if (voucher_input) {
     }
 
     let coef = (coef_vouchers + coef_days) / 2;
-    console.log("coef_vouchers = ", coef_vouchers)
-    console.log("coef_days = ", coef_days)
-    console.log("coef", coef)
     let priceReduction = (parseInt(voucher_input.value) * coef);
 
     let addTxtPriceReduction = document.getElementById("price-advice");

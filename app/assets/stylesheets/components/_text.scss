@@ -73,10 +73,29 @@ input {
 }
 
 #voucher_brand_id{
+  text-align-last: center;
+}
+
+#voucher_value{
+  padding: 0px;
+}
+
+#voucher_price{
   padding: 0px;
 }
 
 .position-bottom{
   display: flex;
   justify-content: center;
+}
+ .form-group{
+  margin: 6px 0px;
+ }
+
+#value-edit{
+ margin-right: 4px;
+}
+
+#price-edit{
+  margin-left: 4px;
 }
