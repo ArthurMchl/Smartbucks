@@ -4,39 +4,18 @@
     <%= image_tag "logo_smartbucks.png" %>
     <% end %>
 
-      <button class="navbar-toggler toggler-example" type="button"
-        data-toggle="modal" data-target="#exampleModalCenter"
-        aria-controls="#exampleModalCenter" aria-expanded="false" aria-label="Toggle navigation">
+      <button
+        class="navbar-toggler toggler-example"
+        type="button"
+        data-toggle="modal"
+        data-target="#burger-menu"
+        aria-controls="#exampleModalCenter"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="dark-blue-text"> <i class="fas fa-bars fa-1x"></i></span>
       </button>
 
-  <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Menu</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-            <div class="modal-body">
-              <ul class="navbar-nav mr-auto">
-                <% if user_signed_in? %>
-                  <li> <%= link_to "Vendre un bon", new_voucher_path, class: "dropdown-item" %> </li>
-                  <li> <%= link_to "Mes annonces", profile_path, class: "dropdown-item" %></li>
-                  <li> <%= link_to "", "#", class: "dropdown-item" %> </li>
-                  <li> <%= link_to "", "#", class: "dropdown-item" %> </li>
-                  <li> <%= link_to "Aide", "#", class: "dropdown-item" %> </li>
-                  <li> <%= link_to "Contact", "#", class: "dropdown-item" %> </li>
-                  <li> <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
-                <% else %>
-                  <li> <%= link_to "Connexion", new_user_session_path, class: "nav-link" %> </li>
-                <% end %>
-              </ul>
-            </div>
-        </div>
-      </div>
-    </div>
+    <!-- Modal -->
   </div>
 <% end %>
