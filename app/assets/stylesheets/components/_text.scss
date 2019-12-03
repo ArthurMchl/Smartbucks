@@ -1,15 +1,19 @@
 .title {
-  color: var(--component-color);
-  margin-top: 35px;
+  color: $component-color;
+  // margin-top: 35px;s
   text-align: center;
-  font-size: 1.75rem;
+  font-size: 20px;
   font-weight:bold;
-  margin-bottom: 15px;
+  // margin-bottom: 15px;
+}
+
+h3 .title {
+  margin: 0px;
 }
 
 
 .title-label{
-  color: var(--component-color);
+  color: $component-color;
   margin-top: 20px;
   text-align: center;
   font-size: 25px;
@@ -18,7 +22,7 @@
 }
 
 .title-label-edit{
-  color: var(--component-color);
+  color: $component-color;
   margin-top: 0px;
   text-align: center;
   font-size: 25px;
@@ -27,7 +31,7 @@
 }
 
 .text-url-center {
-  color: var(--component-color);
+  color: $component-color;
   font-weight: bold;
 }
 
@@ -44,8 +48,8 @@ input {
 }
 
 .text-ico {
-    color: var(--component-color);
-      font-weight: bold;
+  color: $component-color;
+  font-weight: bold;
   font-size: 32px;
   text-align: center;
   margin-bottom: 40px;
