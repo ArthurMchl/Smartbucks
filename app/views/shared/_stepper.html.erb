@@ -1,0 +1,27 @@
+
+<% green = "#4DD599" %>
+<% grey = "#E9E9E9" %>
+
+<svg class="img-svg" width="338" height="60" viewBox="0 0 338 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- circles  -->
+    <circle cx="11" cy="49" r="11" fill="<%= step >= 1 ? green : grey %>"/>
+    <circle cx="169" cy="49" r="11" fill="<%= step >= 2 ? green : grey %>"/>
+    <circle cx="327" cy="49" r="11" fill="<%= step >= 3 ? green : grey %>"/>
+
+    <!-- line -->
+    <%
+      case step
+      when 1
+    %>
+      <path d="M22 49L158 49" stroke="<%= grey %>" stroke-width="5"/> -->
+      <line x1="180" y1="49.5" x2="316" y2="49.5" stroke="<%= grey %>" stroke-width="5"/>
+
+    <% when 2 %>
+      <path d="M22 49H158" stroke="<%= green %>" stroke-width="5"/>
+      <path d="M180 49L317 49" stroke="<%= grey %>" stroke-width="5"/>
+
+    <% when 3 %>
+      <path d="M22 49H158.5" stroke="<%= green %>" stroke-width="5"/>
+      <line x1="180" y1="49.5" x2="316" y2="49.5" stroke="<%= green %>" stroke-width="5"/>
+    <% end %>
+</svg>
