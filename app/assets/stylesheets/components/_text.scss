@@ -27,6 +27,7 @@
   font-size: 25px;
   font-weight:bold;
   margin-bottom: 10px;
+  flex: 0 0 50%;
 }
 
 .text-url-center {
@@ -62,26 +63,6 @@ input {
 
 .weight-font{
   font-weight: bold;
-}
-
-#voucher_category{
-  padding: 0px;
-}
-
-#voucher_bar_code{
-  padding: 0px;
-}
-
-#voucher_brand_id{
-  text-align-last: center;
-}
-
-#voucher_value{
-  padding: 0px;
-}
-
-#voucher_price{
-  padding: 0px;
 }
 
 .position-bottom{

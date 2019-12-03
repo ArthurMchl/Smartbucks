@@ -14,24 +14,24 @@
         <h3 class="title">Choisissez une catégorie</h3>
 
         <div class="text-center">
-          <%= link_to new_voucher_path(category: 'Carte Cadeau', step: 2), class:"button button-small-height"  do %>
+          <%= link_to new_voucher_path(category: 'Carte Cadeau', step: 2), class:"button button-category"  do %>
           Carte Cadeau
           <% end %>
 
-          <%= link_to new_voucher_path(category: 'Chèque Cadeau', step: 2), class:"button button-small-height"  do %>
+          <%= link_to new_voucher_path(category: 'Chèque Cadeau', step: 2), class:"button button-category"  do %>
           Chèque Cadeau
           <% end %>
 
-          <%= link_to new_voucher_path(category: 'Coffret Cadeau', step: 2), class:"button button-small-height"  do %>
+          <%= link_to new_voucher_path(category: 'Coffret Cadeau', step: 2), class:"button button-category"  do %>
           Coffret Cadeaux
           <% end %>
 
-          <%= link_to new_voucher_path(category: 'Avoir', step: 2), class:"button button-small-height"  do %>
+          <%= link_to new_voucher_path(category: 'Avoir', step: 2), class:"button button-category"  do %>
           Avoir
           <% end %>
 
           <div class="mt-3">
-            <%= link_to root_path, class:"button button-small-height" do %>
+            <%= link_to root_path, class:"button button-category" do %>
             Retour
             <% end %>
           </div>
@@ -71,8 +71,8 @@
           <input type="text" name="bar_code" class="input">
         </div>
         <div class="d-flex mt-4">
-          <%= link_to 'Précedent', new_voucher_path(step: 1), class:"button button-small-height-width" %>
-          <input type="submit" value="Suivant" class="button button-small-height-width">
+          <%= link_to 'Précedent', new_voucher_path(step: 1), class:"button button-navigation" %>
+          <input type="submit" value="Suivant" class="button button-navigation">
         </div>
       </form>
     </div>
@@ -105,8 +105,8 @@
           </div>
 
           <div class="d-flex mt-4 justify-content-center">
-            <%= link_to 'Précedent', new_voucher_path(step: 1), class:"button button-small-height-width" %>
-            <input type="submit" value="Valider" class="button button-small-height-width">
+            <%= link_to 'Précedent', new_voucher_path(step: 1), class:"button button-navigation" %>
+            <input type="submit" value="Valider" class="button button-navigation">
           </div>
         </div>
       </div>

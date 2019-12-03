@@ -21,7 +21,7 @@
   margin: 0;
 }
 
-.button-small-height {
+.button-category {
   height:          45px;
   width:           320px;
   margin:          0;
@@ -32,13 +32,14 @@
   margin-bottom: 15px;
 }
 
-.button-small-height-width {
+.button-navigation {
   height: 45px;
   width: 140px;
   margin: 0 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
 }
 
 .button-margin-top {

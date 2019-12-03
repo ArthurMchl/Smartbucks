@@ -1,41 +1,53 @@
 <!-- Alexandre: Un seul H1 par page!!! -->
-<div class="container-voucher" style="background-color: <%= voucher.brand.color %>">
 
-  <div class="top-section">
-    <%= image_tag voucher.brand.logo, class: voucher.brand.logo_horizontal?  ? 'logo-horizontal' : 'logo-vertical' %>
-  </div>
+<div class="container-fluid m-0 vh-100 d-flex flex-column align-items-center justify-content-between" style="background-color: <%= voucher.brand.color %>">
+    <div class="top-section">
+      <%= image_tag voucher.brand.logo, class: voucher.brand.logo_horizontal?  ? 'logo-horizontal' : 'logo-vertical' %>
+    </div>
 
-  <div class="middle-section">
-    <% if voucher.user == current_user && params[:display_confirmation_message] == "true" %>
-      <h1>Votre bon est en ligne !</h1>
-    <% end %>
-    <h2> - <%= voucher.pourcentage %> %</h2>
-    <p class="card-info">Valeur en magasin : <%= voucher.value%> €</p>
-    <p class="card-info">Type : <%= voucher.category %> </p>
-    <p class="card-info">Expiration : <%= parse_date_fr(voucher.end_date)%></p>
-  </div>
+    <div class="middle-section">
+      <div class="col-12">
+        <% if voucher.user == current_user && params[:display_confirmation_message] == "true" %>
+          <h1 class="text-center text-white">Votre bon est en ligne !</h1>
+        <% end %>
+      </div>
+      <div class="col-12">
+        <h2 class="text-white"> - <%= voucher.pourcentage %> %</h2>
+      </div>
+      <div class="col-12">
+        <p class="card-info">Valeur en magasin : <%= voucher.value%> €</p>
+        <p class="card-info">Type : <%= voucher.category %> </p>
+        <p class="card-info">Expiration : <%= parse_date_fr(voucher.end_date)%></p>
+      </div>
+    </div>
 
-  <div class="bottom-section">
-    <% if voucher.user == current_user %> <!-- BAR CODE -->
-      <div id= "bar_code">
-        <%=  image_tag "barcode.png", height: '65', width: '90%'   %>
-        <div class="mt-3">
+    <div class="bottom-section pb-4">
+      <% if voucher.user == current_user %> <!-- BAR CODE -->
+        <div class="d-flex justify-content-center">
+          <%=  image_tag "barcode.png", height: '65', width: '90%'   %>
+        </div>
+        <div class="links d-flex justify-content-around mt-3">
           <%= link_to edit_voucher_path(@voucher) do %>
             <i class="fas fa-edit text-white mr-5"></i>
           <% end %>
-          <span class="retour"> <%= link_to "Retour à mes annonces", profile_path  %> </span>
+          <div class="retour"> <%= link_to "Retour à mes annonces", profile_path  %> </div>
           <%= link_to voucher_path(voucher), method: :delete, data: { confirm: "Are you sure?" } do %>
             <i class="fas fa-trash text-white ml-5"></i>
           <% end %>
         </div>
-      </div>
-    <% else %> <!-- BUTTON PAYER -->
-      <%= form_tag orders_path, class: "mt-5" do %>
-        <%= hidden_field_tag 'voucher_id', @voucher.id %>
-        <%= submit_tag "Payer #{voucher.price} €", class: 'btn-white', style: "color: #{voucher.brand.color}"%>
+      <% else %> <!-- BUTTON PAYER -->
+        <%= form_tag orders_path, class: "mt-5" do %>
+          <%= hidden_field_tag 'voucher_id', @voucher.id %>
+          <%= submit_tag "Payer #{voucher.price} €", class: 'btn-white', style: "color: #{voucher.brand.color}"%>
+        <% end %>
+        <div class="retour-index d-flex justify-content-around"> <%= link_to "Retour", vouchers_path%></div>
       <% end %>
-      <div class="retour-index"> <%= link_to "Retour", vouchers_path%> </div>
-    <% end %>
-  </div>
+    </div>
 </div>
+
+
+
+
+
+
 
