@@ -6,11 +6,10 @@
   <% if voucher.user == current_user && params[:display_confirmation_message] == "true" %>
     <h1>Votre bon est en ligne !</h1>
   <% end %>
-  <h2> <%= voucher.pourcentage %> %</h2>
+  <h2> - <%= voucher.pourcentage %> %</h2>
   <h1> valeur en magasin : <%= voucher.value%> €</h1>
   <h1> type : <%= voucher.category %> </h1>
   <h1> expiration : <%= parse_date_fr(voucher.end_date)%></h1>
-
   <% if voucher.user == current_user %>
     <div class = "div-fixed-bottom barcode mb-3 flex-direct-column">
       <%=  image_tag "barcode.png", height: '65', width: '90%'   %>
