@@ -28,6 +28,8 @@
   display:         flex;
   justify-content: center;
   align-items:     center;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .button-small-height-width {
@@ -81,4 +83,34 @@ input[type="submit" i] {
 
 .button .button-small-height-width .position-absolute-bottom {
   margin: 0, auto;
+}
+
+.btn-retour {
+  font-size: 30px;
+  font-weight: bold;
+  border-color: white;
+  background-color: white;
+  width: 280px;
+  height: 45px;
+  border-radius: 12px;
+  padding: 10px 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.btn-retour a {
+  height: 50px;
+}
+
+.retour-index{
+  font-size: 20px;
+  color: white;
+  border-radius: 12px;
+  padding: 10px 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.retour-index a {
+  color: white;
 }

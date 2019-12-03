@@ -1,23 +1,28 @@
-<div class="container-voucher" style="background-color: <%= @order.voucher.brand.color %>" >
-  <div class ="logo-mark">
-    <%= image_tag @order.voucher.brand.logo, height: '80%', width: '80%', id:"logo"  %>
+<!-- Alexandre: Un seul H1 par page!!! -->
+<div class="container-voucher" style="background-color: <%= voucher.brand.color %>">
+
+  <div class="top-section">
+    <%= image_tag voucher.brand.logo, class: voucher.brand.logo_horizontal?  ? 'logo-horizontal' : 'logo-vertical' %>
   </div>
-  <% if params[:display_confirmation_message] == "true" %>
-    <h1>Votre achat a été effectué !</h1>
-  <% end %>
 
-  <h1>
-    Order #<%= @order.id %>
-    <small><span class="badge badge-primary"><%= @order.state %></span></small>
-  </h1>
+  <div class="middle-section">
+    <% if params[:display_confirmation_message] == "true"  %>
+      <h1>Votre achat est confirmé !</h1>
+    <% end %>
+    <h2> - <%= voucher.pourcentage %> %</h2>
+    <p class="card-info">Valeur en magasin : <%= voucher.value%> €</p>
+    <p class="card-info">Type : <%= voucher.category %> </p>
+    <p class="card-info">Expiration : <%= parse_date_fr(voucher.end_date)%></p>
+  </div>
 
-  <h2> - <%= @order.voucher.pourcentage%> %</h2>
-  <h1> valeur en magasin : <%= @order.voucher.value%> €</h1>
-  <h1> type : <%= @order.voucher.category %> </h1>
-  <h1> expiration : <%= parse_date_fr(@order.voucher.end_date)%></h1>
-  <div class = "div-fixed-bottom barcode mb-3 flex-direct-column">
-    <%=  image_tag "barcode.png", height: '65', width: '90%'   %>
-
-    <span class = "retour"> <%= link_to "Retour à mes annonces", profile_path  %> </span>
+  <div class="bottom-section">
+    <div id= "bar_code">
+      <%=  image_tag "barcode.png", height: '65', width: '90%'   %>
+      <div class="mt-2 mb-3">
+        <span class="retour"> <%= link_to "Retour à mes annonces", profile_path  %> </span>
+      </div>
+    </div>
   </div>
 </div>
+
+
