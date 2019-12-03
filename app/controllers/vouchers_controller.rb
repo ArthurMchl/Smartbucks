@@ -22,6 +22,7 @@ class VouchersController < ApplicationController
     if params[:step].present?
       @voucher = Voucher.new
       @brands  = Brand.all
+      @step = params[:step].to_i
     else
       redirect_to new_voucher_path(step: 1)
     end
