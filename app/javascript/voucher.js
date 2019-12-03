@@ -1,10 +1,10 @@
-const voucher_input = document.querySelector(".text-value");
-const inputDate = document.querySelector(".input_date")
 
-if (voucher_input) {
 
-   document.querySelector('.input-price').style.backgroundImage = "none";
-    const vc = parseInt(document.getElementById('voucher_count').dataset.vc);
+
+<<<<<<< HEAD
+
+
+    document.querySelector('.input-price').style.backgroundImage = "none";
     const inputPrice = document.querySelector('.input-price')
     const buttonValidate = document.getElementById('button-validate');
     const addTxtPriceReduction = document.getElementById("price-advice");
@@ -24,6 +24,31 @@ if (voucher_input) {
       } else {
         coef_vouchers = 0.95;
       }
+=======
+const formNewVoucher = document.getElementById('new_voucher');
+
+if (formNewVoucher) {
+
+  const voucher_input = document.getElementById('voucher_value');
+  const vc = parseInt(document.getElementById('voucher_count').dataset.vc);
+
+  voucher_input.addEventListener("blur", (event) => {
+    const date = document.getElementById('voucher_end_date').value
+    const days = Math.ceil((new Date(date) - new Date()) / (60 * 60 * 24 * 1000));
+    let coef_vouchers = 0
+    let coef_days = 0
+    if(vc <= 100) {
+      coef_vouchers = 0.006 * vc + 0.35;
+    } else {
+      coef_vouchers = 0.95;
+    }
+
+    if (days <= 90) {
+      coef_days = 0.95 - (0.006 * days);
+    } else {
+      coef_days = 0.35;
+    }
+>>>>>>> c966407aca573c6216ed3422230e7c694c430346
 
       if (days <= 90) {
         coef_days = 0.95 - (0.006 * days);
@@ -78,18 +103,7 @@ if (voucher_input) {
   }
 }
 
-if (inputDate) {
-  inputDate.addEventListener("change", (event) => {
-      date = new Date(inputDate.value)
-      if(date < new Date()) {
-        alert("Veuiller entrer une date d'expiration valide svp")
-        inputDate.value = ""
-      }
-  });
 
-
-
-}
 
 
 

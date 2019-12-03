@@ -1,6 +1,6 @@
 <h1 class="title">Mes Achats</h1>
 <div class="index-grid">
-  <% @orders.each do |order| %>
+  <% @orders_paid.each do |order| %>
     <div>
       <%= render "vouchers/card_order", order: order %>
     </div>

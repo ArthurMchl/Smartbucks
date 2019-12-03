@@ -14,6 +14,7 @@ class VouchersController < ApplicationController
   def show
     @voucher = voucher_set_id
     @hide_navbar = true
+
   end
 
   def new
@@ -22,6 +23,7 @@ class VouchersController < ApplicationController
     if params[:step].present?
       @voucher = Voucher.new
       @brands  = Brand.all
+      @step = params[:step].to_i
     else
       redirect_to new_voucher_path(step: 1)
     end
@@ -32,7 +34,6 @@ class VouchersController < ApplicationController
     brand = Brand.find(params[:voucher][:brand]) if params[:voucher][:brand].present?
     @voucher.brand = brand
     @voucher.user = current_user
-
     if @voucher.save
       redirect_to publish_voucher_path(@voucher)
     else

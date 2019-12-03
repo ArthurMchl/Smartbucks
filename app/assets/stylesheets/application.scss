@@ -13,13 +13,14 @@
 @import "components/button";
 @import "components/textbox";
 @import "components/select";
+@import "components/modal";
 @import "components/text";
 @import "pages/index";
 @import "pages/home";
 
 :root {
-  --component-color: #4DD599;
-  --component-backcolor: rgb(240, 240, 240);
+  // --component-color: #4DD599;
+  // --component-backcolor: rgb(240, 240, 240);
   --component-colorfont: rgba(0, 0, 0,0.6);
   --button-backcolor: #4DD599;
   --button-backcolor-hover: rgb(0, 60, 255);
@@ -34,7 +35,7 @@ body, html {
   background-color: white;
 }
 
-h1 ,h2 ,h3 ,h4, h5, h6, p ,ul, li, .fas {
+h1 ,h2 ,h3 ,h4, h5, h6, p ,ul, li {
     margin: 0px;
 }
 
@@ -55,3 +56,14 @@ input[type=number] {
   padding: 0;
 }
 
+input{
+  text-align: center;
+}
+
+select{
+  text-align: center;
+}
+
+abbr[title="required"] {
+  display: none;
+}

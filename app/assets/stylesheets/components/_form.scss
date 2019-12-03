@@ -1,0 +1,62 @@
+select{
+    // -webkit-appearance: none;
+    appearance: none;
+}
+
+.form-container {
+  height: calc(100vh - 75px - 60px);
+}
+
+.icon-input {
+  height: 50px;
+  width: 75px;
+  background-color: $green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px 0 0 5px;
+  border: 2px solid $green;
+}
+
+
+.input-with-icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  height: 50px;
+}
+
+
+.input {
+  outline: none;
+  font-size: 20px;
+  background-color: rgba(240,240,240, 1);
+  color: rgba(0, 0, 0,0.6);
+  padding-left: 15px;
+  height: 100%;
+  width: 100%;
+  border: 0;
+  border-top: 2px solid $green;
+  border-right: 2px solid $green;
+  border-bottom: 2px solid $green;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.icon {
+  color: $white;
+  font-size: 24px;
+}
+
+.voucher-form > .form-group {
+  margin-bottom: 0;
+}
+
+#price-advice {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 20px;
+}
