@@ -4,7 +4,7 @@ select{
 }
 
 .form-container {
-  // height: calc(100vh - 75px - 60px);
+  height: calc(100vh - 75px - 60px);
 }
 
 .icon-input {
@@ -53,4 +53,10 @@ select{
 
 .voucher-form > .form-group {
   margin-bottom: 0;
+}
+
+#price-advice {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 20px;
 }

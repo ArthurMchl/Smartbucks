@@ -83,10 +83,10 @@
         <div class="d-flex flex-column align-items-center voucher-form">
 
         <!-- HIDDEN INPUTS -->
-          <%= f.input :category,  label: false, input_html: { value: params[:category], class: "d-none mb-0" } %>
-          <%= f.input :brand,     label: false, input_html: { value: params[:brand_id], class: "d-none mb-0"} %>
-          <%= f.input :end_date,  label: false, input_html: { value: params[:end_date], class: "d-none mb-0", id: 'end_date' } %>
-          <%= f.input :bar_code,  label: false, input_html: { value: params[:bar_code], class: "d-none mb-0" } %>
+          <%= f.input :category,  label: false,              input_html: { value: params[:category], class: "d-none mb-0" } %>
+          <%= f.input :brand,     label: false,              input_html: { value: params[:brand_id], class: "d-none mb-0"}  %>
+          <%= f.input :end_date,  label: false, as: :string, input_html: { value: params[:end_date], class: "d-none mb-0" } %>
+          <%= f.input :bar_code,  label: false,              input_html: { value: params[:bar_code], class: "d-none mb-0" } %>
 
 
           <h3 class="title mb-3 mt-3">Valeur du bon</h3>
