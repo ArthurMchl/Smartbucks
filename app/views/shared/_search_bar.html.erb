@@ -1,26 +1,24 @@
 <div class="search-bar">
-
-
   <div class="text">
-  <%= form_tag vouchers_path, method: :get, class: "d-flex" do %>
-    <div class="categories">
-      <select name="category" class="browser-default custom-select">
-        <option value="">Catégorie</option>
+    <%= form_tag vouchers_path, method: :get, class: "d-flex" do %>
+      <div class="categories">
+        <select name="category" class="browser-default custom-select">
+          <option value="">Catégorie</option>
           <% Voucher::CATEGORIES.each do |category| %>
             <option <% if category == params[:category] %> selected <% end %>>
               <p> <%= category %> </p>
             </option>
           <% end %>
-      </select>
-    </div>
-    <div class="fas mr-0 fa-search search-icon" style="padding-top: 13px; color: grey;">
-    </div>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Trouver un bon"
-    %>
+        </select>
+      </div>
+      <!-- <div class="d-flex align-items-center"> -->
+      <div class="search-icon" ><i class="fas fa-search"></i></div>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control search-input",
+        placeholder: "Trouver un bon"
+      %>
+      <%submit_tag%>
+    <% end %>
   </div>
-    <%submit_tag%>
-  <% end %>
 </div>
