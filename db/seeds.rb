@@ -143,12 +143,6 @@ ikea = Brand.create!(
   logo: 'https://www.creads.fr/app/uploads/sites/1/2017/02/2000px-ikea_logo.svg_.png'
 )
 
-auchan = Brand.create!(
-
-  name: 'Auchan',
-  color: '#CC2131',
-  logo: 'https://img.argentdubeurre.com/content/5551/illustration/auchan-100-rembourse-4.jpg'
-)
 
 cultura = Brand.create!(
 
@@ -424,17 +418,6 @@ ikea_50 = Voucher.create!(
   user_id:  pierre.id
 )
 
-auchan_30 = Voucher.create!(
-
-
-  value:    30,
-  price:    26,
-  end_date: Time.new(2020, 02, 15, 0, 0, 0, '+02:00'),
-  category: 'Carte Cadeau',
-  bar_code: '60328438',
-  brand_id: auchan.id,
-  user_id:  pierre.id
-)
 
 cultura_30 = Voucher.create!(
 
