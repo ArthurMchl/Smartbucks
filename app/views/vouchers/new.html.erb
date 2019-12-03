@@ -37,6 +37,7 @@
           </div>
         </div>
       </div>
+      <!-- <input type="date" name="end_date", class="container-textbox-text input_date"> -->
     </div>
 
   <% when 2 %>
@@ -101,17 +102,21 @@
 
           <div class="input-with-icon">
             <div class="icon-input"><i class="fas fa-dollar-sign icon"></i></div>
-            <input type="number" id="voucher_price" step="1" value="0,00" name="voucher[price]" class="input">
+            <input type="number" id="voucher_price" step="1" value="0,00" name="voucher[price]" class="input input-price">
           </div>
+
+          <div id="price-alert"></div>
+
 
           <div class="d-flex mt-4 justify-content-center">
             <%= link_to 'Précedent', new_voucher_path(step: 1), class:"button button-navigation" %>
-            <input type="submit" value="Valider" class="button button-navigation">
+            <input id="button-validate" type="submit" value="Valider" class="button button-navigation">
           </div>
         </div>
       </div>
     <% end %>
 
     <div id="voucher_count" data-vc="<%= @vc %>"></div>
+    <div id="price-reduction" data-price=""></div>
   <% end %>
 

@@ -1,56 +1,120 @@
+
+const desactiveSubmitButton = () => {
+  const buttonValidate = document.getElementById('button-validate');
+  buttonValidate.disabled = true
+  buttonValidate.style.backgroundColor = "grey";
+}
+
+const activateSubmitButton = () => {
+  const buttonValidate = document.getElementById('button-validate');
+  buttonValidate.disabled = false;
+  buttonValidate.style.backgroundColor = "#63D699";
+}
+
+const changeInputBorderColor = (element, statut) => {
+
+  if (statut === "ok") {
+    element.style.borderColor = "#63D699"
+  } else if (statut === "forbidden") {
+    element.style.borderColor = "red";
+  } else {
+    element.style.borderColor = "#F79F1F"
+  }
+
+}
+
+const displayPriceAdvice = (inputVoucherValue, priceReductionElement) => {
+
+  const date = document.getElementById('voucher_end_date').value
+  const addTxtPriceReduction = document.getElementById("price-advice");
+  const numberVouchers = parseInt(document.getElementById('voucher_count').dataset.vc);
+
+
+  const days = Math.ceil((new Date(date) - new Date()) / (60 * 60 * 24 * 1000));
+  let coef_vouchers = 0
+  let coef_days = 0
+
+  if(numberVouchers <= 100) {
+    coef_vouchers = 0.006 * numberVouchers + 0.35;
+  } else {
+    coef_vouchers = 0.95;
+  }
+
+  if (days <= 90) {
+    coef_days = 0.95 - (0.006 * days);
+  } else {
+    coef_days = 0.35;
+  }
+
+  let coef = (coef_vouchers + coef_days) / 2;
+
+  priceReduction = (parseInt(inputVoucherValue.value) * coef);
+  priceReduction = Math.ceil(priceReduction)
+  addTxtPriceReduction.innerHTML = `Prix de vente conseillé : <span class="weight-font">${Math.ceil(priceReduction)} €</span>`;
+
+  priceReductionElement.dataset.price = priceReduction
+}
+
 const formNewVoucher = document.getElementById('new_voucher');
 
 if (formNewVoucher) {
 
-  const voucher_input = document.getElementById('voucher_value');
-  const vc = parseInt(document.getElementById('voucher_count').dataset.vc);
+  const inputPrice = document.getElementById('voucher_price')
+  const buttonValidate = document.getElementById('button-validate');
+  const inputVoucherValue = document.getElementById('voucher_value');
+  const priceReductionElement = document.getElementById('price-reduction');
 
-  voucher_input.addEventListener("blur", (event) => {
-    const date = document.getElementById('voucher_end_date').value
-    const days = Math.ceil((new Date(date) - new Date()) / (60 * 60 * 24 * 1000));
-    let coef_vouchers = 0
-    let coef_days = 0
-    if(vc <= 100) {
-      coef_vouchers = 0.006 * vc + 0.35;
-    } else {
-      coef_vouchers = 0.95;
+  let priceReduction = null
+
+  inputVoucherValue.addEventListener("change", (event) => {
+    displayPriceAdvice(inputVoucherValue, priceReductionElement);
+  })
+
+
+
+  inputPrice.addEventListener("input", (event) => {
+    priceReduction = parseInt(priceReductionElement.dataset.price, 10)
+    let alertPrice = document.getElementById("price-alert")
+    const price = parseInt(inputPrice.value, 10)
+    const value = parseInt(inputVoucherValue.value, 10)
+
+    if(price > value) {
+      desactiveSubmitButton();
+      changeInputBorderColor(event.currentTarget, "forbidden");
+      alertPrice.innerHTML = "Le prix indiqué est supérieur à la valeur du bon";
+      alertPrice.style.color = "#EA2027"
+
+    } else if (priceReduction > value)  {
+      activateSubmitButton();
+      changeInputBorderColor(event.currentTarget, "");
+      alertPrice.innerHTML = "";
+
+    } else if(priceReduction === value) {
+      activateSubmitButton();
+      changeInputBorderColor(event.currentTarget, "");
+      alertPrice.innerHTML = "";
+
+    } else if(price === value) {
+      activateSubmitButton();
+      changeInputBorderColor(event.currentTarget, "");
+      alertPrice.innerHTML = "";
+
+    } else if(priceReduction < price && price < value) {
+      activateSubmitButton();
+      changeInputBorderColor(event.currentTarget, "");
+      alertPrice.innerHTML = "";
+
+    } else if(price < priceReduction) {
+      activateSubmitButton();
+      changeInputBorderColor(event.currentTarget, "ok");
+      alertPrice.innerHTML = ""
     }
-
-    if (days <= 90) {
-      coef_days = 0.95 - (0.006 * days);
-    } else {
-      coef_days = 0.35;
-    }
-
-    let coef = (coef_vouchers + coef_days) / 2;
-    let priceReduction = (parseInt(voucher_input.value) * coef);
-
-    let addTxtPriceReduction = document.getElementById("price-advice");
-    addTxtPriceReduction.innerHTML = `Prix de vente conseillé : <span class="weight-font">${Math.ceil(priceReduction)} €</span>`;
   });
 }
 
-  // const displayReductionPrice(priceReduction) = {
 
 
 
-  // }
 
 
-  // def discount_rate(brand_id, end_date)
-  //   vouchers_count = Voucher.where(brand_id: brand_id)
-  //   if vouchers_count.count <= 100
-  //     coef_vouchers = 0.006 * vouchers_count.count + 0.35
-  //   else
-  //     coef_vouchers = 0.95
-  //   end
-  //   days_remaining = end_date.to_date - Date.today
-  //   if days_remaining <= 90
-  //     coef_days = 0.95 - (0.006 * days_remaining)
-  //   else
-  //     coef_days = 0.35
-  //   end
-  //   coef = (coef_vouchers + coef_days) / 2
-  //   price = 50
-  //   return (price * coef).round
-  // end
+
