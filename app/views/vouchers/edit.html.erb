@@ -6,13 +6,13 @@
        <%= f.input :end_date, as: :date, label: "Date d'expiration", :label_html => { :class => 'title-label-edit' } %>
        <%= f.input :bar_code, label: 'Numéro de code barre', :label_html => { :class => 'title-label-edit' } %>
        <div class="d-flex">
-        <%= f.input :price, label: 'Prix', :label_html => { :class => 'title-label-edit' } %>
        <%= f.input :value, label: 'Valeur', :label_html => { :class => 'title-label-edit' } %>
+       <%= f.input :price, label: 'Prix', :label_html => { :class => 'title-label-edit' } %>
        </div>
      </div>
 
   <div class="position-bottom">
-       <%= f.submit 'Modifier', class: "button button-small-height-width"%>
+       <%= f.submit 'Modifier', class: "button button-small-height-width", id: "modif-validation"%>
   </div>
 
     <% end %>
