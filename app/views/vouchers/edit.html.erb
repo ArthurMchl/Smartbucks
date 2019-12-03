@@ -1,16 +1,29 @@
-<div class="container-form">
-  <%= simple_form_for [@brand, @voucher] do |f| %>
-     <div>
-       <%= f.input :category, label:'Type de bon', :label_html => { :class => 'title-label-edit' } %>
-       <%= f.association :brand, label: "Marque(s)", :label_html => { :class => 'title-label-edit' } %>
-       <%= f.input :end_date, as: :date, label: "Date d'expiration", :label_html => { :class => 'title-label-edit' } %>
-       <%= f.input :bar_code, label: 'Numéro de code barre', :label_html => { :class => 'title-label-edit' } %>
-     </div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <%= simple_form_for [@brand, @voucher] do |f| %>
+          <%= f.input :category, label:'Type de bon', label_html: { class: 'title-label-edit' } %>
+          <%= f.association :brand, label: false, input_html: { class: "d-none" }  %>
+          <%= f.input :end_date, label: "Date d'expiration",  label_html: { class: 'title-label-edit' } %>
+          <%= f.input :bar_code, label: 'Numéro de code barre', label_html: { class: 'title-label-edit' } %>
 
-  <div class="position-bottom">
-       <%= f.submit 'Modifier', class: "button button-small-height-width"%>
-  </div>
+          <div class="row">
+            <div class="col-6">
+              <%= f.input :value, label: 'Valeur', label_html: { class: 'title-label-edit' } %>
+            </div>
+            <div class="col-6">
+              <%= f.input :price, label: 'Prix', label_html: { class: 'title-label-edit' } %>
+            </div>
+          </div>
 
-    <% end %>
+          <div class="d-flex justify-content-center">
+            <%= f.submit 'Modifier', class: "button button-navigation", id: "modif-validation"%>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
   </div>
 </div>
+
+<div id="price" data-price="<%= @voucher.price %>"></div>

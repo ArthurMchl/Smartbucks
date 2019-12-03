@@ -1,17 +1,17 @@
 <h1 class="title">Mes Achats</h1>
 <div class="index-grid">
-    <% @orders.each_slice(2).to_a.each do |orders| %>
-      <% orders.each do |order| %>
-      <div><%= render "vouchers/card_order", order: order %></div>
-      <% end %>
-    <% end %>
+  <% @orders_paid.each do |order| %>
+    <div>
+      <%= render "vouchers/card_order", order: order %>
+    </div>
+  <% end %>
 </div>
 
 <h1 class="title">Mes ventes</h1>
 <div class="index-grid">
-  <% @vouchers.each_slice(2).to_a.each do |vouchers| %>
-    <% vouchers.each do |voucher| %>
-     <div><%= render "vouchers/card", voucher: voucher %></div>
-    <% end %>
+  <% @vouchers.each do |voucher| %>
+    <div>
+      <%= render "vouchers/card", voucher: voucher %>
+    </div>
   <% end %>
 </div>

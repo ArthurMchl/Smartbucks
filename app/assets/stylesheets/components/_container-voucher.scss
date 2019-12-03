@@ -1,0 +1,39 @@
+.container-voucher {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+
+.logo-vertical {
+  max-height: 100px;
+}
+
+.logo-horizontal {
+  max-width: 300px;
+}
+
+.logo-section {
+  margin-bottom: 50px;
+}
+
+.card-info {
+  font-size: 18px;
+  color: white;
+  padding-bottom: 5px;
+}
+
+.top-section {
+  margin-top: 30px;
+}
+
+.bottom-section {
+  margin-bottom: 75px;
+}
+
+.logo-marks {
+  object-fit: contain;
+}

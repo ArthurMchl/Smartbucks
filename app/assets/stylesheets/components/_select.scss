@@ -1,11 +1,11 @@
 .container-select {
-    font-size: 20px;
-    width: 350px;
-    height: 40px;
-    border: solid 2px var(--component-color);
-    border-radius: 8px;
-    background-color: var(--component-backcolor);
-    color: var(--component-colorfont);
+  font-size: 20px;
+  width: 350px;
+  height: 40px;
+  border: solid 2px $component-color;
+  border-radius: 8px;
+  background-color: $component-backcolor;
+  color: $component-color;
 }
 
 .container-select:focus {

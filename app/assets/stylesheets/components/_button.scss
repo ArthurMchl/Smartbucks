@@ -21,22 +21,25 @@
   margin: 0;
 }
 
-.button-small-height {
+.button-category {
   height:          45px;
   width:           320px;
   margin:          0;
   display:         flex;
   justify-content: center;
   align-items:     center;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-.button-small-height-width {
+.button-navigation {
   height: 45px;
   width: 140px;
   margin: 0 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
 }
 
 .button-margin-top {
@@ -65,28 +68,9 @@
   left:            0;
 }
 
-.flex-column {
-  flex-direction: column;
-  align-items: center;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 input[type="submit" i] {
   padding: 0 !important;
 }
-
 
 
 .button i {
@@ -94,13 +78,44 @@ input[type="submit" i] {
 }
 
 
-
-
-
-
 .b {
   margin-top: 120px;
 }
 
+.button .button-small-height-width .position-absolute-bottom {
+  margin: 0, auto;
+}
 
+.btn-retour {
+  font-size: 30px;
+  font-weight: bold;
+  border-color: white;
+  background-color: white;
+  width: 280px;
+  height: 45px;
+  border-radius: 12px;
+  padding: 10px 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
 
+.btn-retour a {
+  height: 50px;
+}
+
+.retour-index{
+  font-size: 20px;
+  color: white;
+  border-radius: 12px;
+  padding: 10px 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.retour-index a {
+  color: white;
+}
+
+#modif-validation{
+  margin-top: 8px;
+}

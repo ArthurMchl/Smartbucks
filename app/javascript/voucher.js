@@ -1,11 +1,12 @@
-const voucher_input = document.querySelector(".text-value");
-if (voucher_input) {
+const formNewVoucher = document.getElementById('new_voucher');
 
+if (formNewVoucher) {
 
+  const voucher_input = document.getElementById('voucher_value');
   const vc = parseInt(document.getElementById('voucher_count').dataset.vc);
 
   voucher_input.addEventListener("blur", (event) => {
-    const date = document.getElementById('end_date').value
+    const date = document.getElementById('voucher_end_date').value
     const days = Math.ceil((new Date(date) - new Date()) / (60 * 60 * 24 * 1000));
     let coef_vouchers = 0
     let coef_days = 0
@@ -14,6 +15,7 @@ if (voucher_input) {
     } else {
       coef_vouchers = 0.95;
     }
+
     if (days <= 90) {
       coef_days = 0.95 - (0.006 * days);
     } else {

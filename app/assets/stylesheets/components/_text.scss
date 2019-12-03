@@ -1,15 +1,18 @@
 .title {
-  color: var(--component-color);
-  margin-top: 35px;
+  color: $component-color;
   text-align: center;
-  font-size: 1.75rem;
+  font-size: 20px;
   font-weight:bold;
   margin-bottom: 15px;
 }
 
+.title {
+  margin-bottom: 10px !important;
+  margin-top: 15px !important;
+}
 
 .title-label{
-  color: var(--component-color);
+  color: $component-color;
   margin-top: 20px;
   text-align: center;
   font-size: 25px;
@@ -18,16 +21,17 @@
 }
 
 .title-label-edit{
-  color: var(--component-color);
+  color: $component-color;
   margin-top: 0px;
   text-align: center;
   font-size: 25px;
   font-weight:bold;
   margin-bottom: 10px;
+  flex: 0 0 50%;
 }
 
 .text-url-center {
-  color: var(--component-color);
+  color: $component-color;
   font-weight: bold;
 }
 
@@ -40,15 +44,15 @@ input {
   font-weight: bold;
   font-size: 24px;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .text-ico {
-    color: var(--component-color);
-      font-weight: bold;
+  color: $component-color;
+  font-weight: bold;
   font-size: 32px;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 #price-advice {
@@ -61,19 +65,18 @@ input {
   font-weight: bold;
 }
 
-#voucher_category{
-  padding: 0px;
-}
-
-#voucher_bar_code{
-  padding: 0px;
-}
-
-#voucher_brand_id{
-  padding: 0px;
-}
-
 .position-bottom{
   display: flex;
   justify-content: center;
+}
+ .form-group{
+  margin: 6px 0px;
+ }
+
+#value-edit{
+ margin-right: 4px;
+}
+
+#price-edit{
+  margin-left: 4px;
 }
