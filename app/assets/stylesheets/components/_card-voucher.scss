@@ -2,10 +2,22 @@
   text-decoration: none;
 }
 
-.sold{
+.sold {
   opacity: 0.5;
+  position: relative;
 }
 
+.sold-text {
+  position: absolute;
+  // opacity: 0.5;
+  bottom: 48px;
+  left: -34px;
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+  font-size: 76px;
+  font-weight: 200;
+  transform: rotate(-60deg);
+}
 
 .card-voucher {
   justify-content: center;
