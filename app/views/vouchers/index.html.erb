@@ -3,9 +3,9 @@
 <div class="index-grid">
   <% @vouchers.each_slice(mobile_device? ? 2 : 4).to_a.each do |vouchers| %>
       <% vouchers.each do |voucher|%>
-
+        <% unless voucher.sold? %>
          <div> <%= render 'vouchers/card', voucher: voucher %> </div>
-
+        <% end %>
       <% end %>
   <% end %>
 </div>

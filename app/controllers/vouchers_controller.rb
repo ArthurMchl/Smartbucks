@@ -16,7 +16,6 @@ class VouchersController < ApplicationController
   def show
     @voucher = voucher_set_id
     @hide_navbar = true
-
   end
 
   def new

@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts '---- Delete all items in database ----'
+Notification.destroy_all
 Order.destroy_all
 Voucher.destroy_all
 Brand.destroy_all
@@ -503,6 +504,30 @@ nocibe_50 = Voucher.create!(
   bar_code: '60328438',
   brand_id: nocibe.id,
   user_id:  micka.id
+)
+
+nocibe_150 = Voucher.create!(
+
+
+  value:    150,
+  price:    120,
+  end_date: Time.new(2019, 12, 31, 0, 0, 0, '+02:00'),
+  category: 'Avoir',
+  bar_code: '603284',
+  brand_id: nocibe.id,
+  user_id:  micka.id
+)
+
+nocibe_30 = Voucher.create!(
+
+
+  value:    30,
+  price:    20,
+  end_date: Time.new(2021, 06, 10, 0, 0, 0, '+02:00'),
+  category: 'Coffret Cadeau',
+  bar_code: '1763697432',
+  brand_id: nocibe.id,
+  user_id:  arthur.id
 )
 
 loreal_50 = Voucher.create!(
