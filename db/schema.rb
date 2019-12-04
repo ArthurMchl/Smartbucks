@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_29_093225) do
+ActiveRecord::Schema.define(version: 2019_12_04_101553) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 2019_11_29_093225) do
     t.string "logo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.boolean "viewed"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -63,6 +71,7 @@ ActiveRecord::Schema.define(version: 2019_11_29_093225) do
     t.index ["user_id"], name: "index_vouchers_on_user_id"
   end
 
+  add_foreign_key "notifications", "users"
   add_foreign_key "orders", "users"
   add_foreign_key "orders", "vouchers"
   add_foreign_key "vouchers", "brands"
