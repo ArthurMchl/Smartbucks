@@ -2,3 +2,4 @@ meta_product_name: "Smartbucks"
 meta_title: "Smartbucks - Achat/Revente de bons, cartes cadeaux,avoirs"
 meta_description: "Achetez et revendez vos bons et cartes cadeaux en moins d'une minute"
 meta_image: "sbbanner.jpg" # should exist in `app/assets/images/`
+twitter_account: "@smartbucks_twitter_account"
