@@ -12,7 +12,7 @@
         <% end %>
       </div>
       <div class="col-12">
-        <h2 class="text-white"> - <%= voucher.pourcentage %> %</h2>
+        <h2 class="text-white"> - <strong><%= voucher.pourcentage %></strong>%</h2>
       </div>
       <div class="col-12">
         <p class="card-info">Valeur en magasin : <%= voucher.value%> €</p>
@@ -40,7 +40,7 @@
           <%= hidden_field_tag 'voucher_id', @voucher.id %>
           <%= submit_tag "Payer #{voucher.price} €", class: 'btn-white', style: "color: #{voucher.brand.color}"%>
         <% end %>
-        <div class="back-index d-flex justify-content-around"> <%= link_to "Retour", vouchers_path%></div>
+        <div class=" back back-index d-flex justify-content-around"> <%= link_to "Retour", vouchers_path%></div>
       <% end %>
     </div>
 </div>
