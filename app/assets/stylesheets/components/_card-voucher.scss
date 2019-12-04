@@ -2,6 +2,20 @@
   text-decoration: none;
 }
 
+.card-voucher-sold{
+  justify-content: center;
+  height: 200px;
+  width:  150px;
+  margin: 10px 0px 25px 0px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0px 2px 5px -1px;
+  color: grey;
+  opacity: 0.5;
+}
+
 .card-voucher {
   justify-content: center;
   height: 200px;

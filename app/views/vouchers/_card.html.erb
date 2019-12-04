@@ -1,34 +1,69 @@
-<%= link_to voucher_path(voucher), class: "card-voucher-link" do %>
-<div class="card-voucher">
+<% unless voucher.sold? %>
+  <%= link_to voucher_path(voucher), class: "card-voucher-link" do %>
+    <div class="card-voucher">
 
-  <div class="brand" style="background-color: <%= voucher.brand.color %>">
-    <div class="logo-container">
-      <%= image_tag voucher.brand.logo, height: '80%', width: '80%', class:"logo-marks"  %>
-    </div>
+      <div class="brand" style="background-color: <%= voucher.brand.color %>">
+        <div class="logo-container">
+          <%= image_tag voucher.brand.logo, height: '80%', width: '80%', class:"logo-marks"  %>
+        </div>
+      </div>
+
+      <div class="details">
+        <div class="category">
+          <%= voucher.category %>
+        </div>
+
+        <div class="numbers">
+          <div class="value">
+            <%= voucher.value %> €
+          </div>
+
+          <div class="price">
+            <%= voucher.price.to_i %> €
+          </div>
+        </div>
+
+        <div class="date">
+          <div class="far fa-clock mt-1" style="font-weight: 600">
+          </div>
+          <div id="voucher-date"><%= parse_date_fr(voucher.end_date) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 
-  <div class="details">
-    <div class="category">
-      <%= voucher.category %>
-    </div>
+<% else %>
 
-    <div class="numbers">
-      <div class="value">
-        <%= voucher.value %> €
-      </div>
+  <div class="card-voucher-sold">
 
-      <div class="price">
-        <%= voucher.price.to_i %> €
+    <div class="brand" style="background-color: <%= voucher.brand.color %>">
+      <div class="logo-container">
+        <%= image_tag voucher.brand.logo, height: '80%', width: '80%', class:"logo-marks"  %>
       </div>
     </div>
 
-    <div class="date">
-      <div class="far fa-clock mt-1" style="font-weight: 600">
+    <div class="details">
+      <div class="category">
+        <%= voucher.category %>
       </div>
-      <div id="voucher-date"><%= parse_date_fr(voucher.end_date) %>
+
+      <div class="numbers">
+        <div class="value">
+          <%= voucher.value %> €
+        </div>
+
+        <div class="price">
+          <%= voucher.price.to_i %> €
+        </div>
+      </div>
+
+      <div class="date">
+        <div class="far fa-clock mt-1" style="font-weight: 600">
+        </div>
+        <div id="voucher-date"><%= parse_date_fr(voucher.end_date) %>
+        </div>
       </div>
     </div>
   </div>
 <% end %>
-</div>
-
