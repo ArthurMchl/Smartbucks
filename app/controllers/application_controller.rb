@@ -17,11 +17,12 @@ class ApplicationController < ActionController::Base
     notifications = Notification.where("user_id = ? AND viewed = ?", current_user, false)
    # Si j qi des notifications qlors j affiche la flash notice
   #tu passes toutes les modifq true
-    notification.viewed = "true"
-    notification.save
-    if notifications
 
+    flash[:notice] = "Vous avez vendu #{notifications.size} bon(s)" if notifications.size > 0
 
-    flash[:notice] = 'Votre bon a été vendu !'
+    notifications.each do |notification|
+      notification.viewed = "true"
+      notification.save
+    end
   end
 end
