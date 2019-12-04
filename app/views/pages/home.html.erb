@@ -24,13 +24,15 @@
         <div class="d-flex justify-content-around mx-4">
           <% vouchers.each do |voucher| %>
             <a class="carousel-control-prev" href="#carouselBestOffer" role="button" data-slide="prev">
-              <i class="far fa-arrow-alt-circle-left mr-4" style="color: grey"></i>
+              <i class="far fa-arrow-alt-circle-left mr-4" style="color: grey; font-size: 20px;"></i>
             </a>
-            <div class="carousel-cards">
-              <%= render 'vouchers/card', voucher: voucher %>
-            </div>
+            <% unless voucher.sold? %>
+              <div class="carousel-cards">
+                <%= render 'vouchers/card', voucher: voucher %>
+              </div>
+            <% end %>
             <a class="carousel-control-next" href="#carouselBestOffer" role="button" data-slide="next">
-              <i class="far fa-arrow-alt-circle-right ml-4" style="color: grey"></i>
+              <i class="far fa-arrow-alt-circle-right ml-4" style="color: grey; font-size: 20px;"></i>
             </a>
           <% end %>
         </div>
@@ -49,13 +51,15 @@
         <div class="d-flex justify-content-around mx-4">
           <% vouchers.each do |voucher| %>
             <a class="carousel-control-prev" href="#carouselTopBrand" role="button" data-slide="prev">
-              <i class="far fa-arrow-alt-circle-left mr-4" style="color: grey"></i>
+              <i class="far fa-arrow-alt-circle-left mr-4" style="color: grey; font-size: 20px;"></i>
             </a>
-            <div class="carousel-cards">
-              <%= render 'vouchers/card', voucher: voucher %>
-            </div>
+            <% unless voucher.sold? %>
+              <div class="carousel-cards">
+                <%= render 'vouchers/card', voucher: voucher %>
+              </div>
+            <% end %>
             <a class="carousel-control-next" href="#carouselTopBrand" role="button" data-slide="next">
-              <i class="far fa-arrow-alt-circle-right ml-4" style="color: grey"></i>
+              <i class="far fa-arrow-alt-circle-right ml-4" style="color: grey; font-size: 20px;"></i>
             </a>
           <% end %>
         </div>

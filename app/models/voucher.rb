@@ -5,6 +5,7 @@ class Voucher < ApplicationRecord
   CATEGORIES = ["Coffret Cadeau", "Avoir", "Chèque Cadeau", "Carte Cadeau"].sort
   belongs_to :user
   belongs_to :brand
+  has_one :order
 
   validates :price, :value, :end_date, :category, :bar_code, presence: true
   validates :category, inclusion: CATEGORIES
@@ -16,5 +17,9 @@ class Voucher < ApplicationRecord
     x = (price_cents / value)
     pourcent = ((1 - (x.fdiv(100))) * 100).round
     return pourcent
+  end
+
+  def sold?
+    !self.order.nil?
   end
 end
