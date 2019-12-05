@@ -97,7 +97,7 @@ if (formNewVoucher) {
 
     } else if (price === priceReduction)  {
         activateSubmitButton();
-        changeInputBorderColor(event.currentTarget, "");
+        changeInputBorderColor(event.currentTarget, "ok");
         changeTextMessageColor("grey", "le prix indiqué correspond au prix conseillé");
 
     } else if(price === value) {
