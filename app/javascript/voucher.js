@@ -98,22 +98,22 @@ if (formNewVoucher) {
     } else if (price === priceReduction)  {
         activateSubmitButton();
         changeInputBorderColor(event.currentTarget, "");
-        changeTextMessageColor("#grey", "le prix indiqué correspond au prix conseillé");
+        changeTextMessageColor("grey", "le prix indiqué correspond au prix conseillé");
 
     } else if(price === value) {
         activateSubmitButton();
         changeInputBorderColor(event.currentTarget, "");
-        changeTextMessageColor("#grey", "le prix de vente est égal à la valeur du bon ");
+        changeTextMessageColor("grey", "le prix de vente est égal à la valeur du bon ");
 
     } else if(priceReduction < price && price < value) {
         activateSubmitButton();
         changeInputBorderColor(event.currentTarget, "");
-        changeTextMessageColor("#grey", "le prix de vente est supérieur au prix conseillé");
+        changeTextMessageColor("grey", "le prix de vente est supérieur au prix conseillé");
 
     } else if(price < priceReduction) {
         activateSubmitButton();
         changeInputBorderColor(event.currentTarget, "ok");
-        changeTextMessageColor("#grey", "le prix indiqué correspond au prix conseillé");
+        changeTextMessageColor("grey", "le prix indiqué correspond au prix conseillé");
     } else {
       deleteTextMessageColor();
     }
