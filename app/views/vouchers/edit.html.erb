@@ -4,7 +4,7 @@
       <%= simple_form_for [@brand, @voucher] do |f| %>
           <%= f.input :category, label:'Type de bon', label_html: { class: 'title-label-edit' } %>
           <%= f.association :brand, label: false, input_html: { class: "d-none" }  %>
-          <%= f.input :end_date, label: "Date d'expiration",  label_html: { class: 'title-label-edit' } %>
+          <%= f.input :end_date, label: "Date d'expiration",  label_html: { class: 'title-label-edit' }, order: [:day, :month, :year] %>
           <%= f.input :bar_code, label: 'Numéro de code barre', label_html: { class: 'title-label-edit' } %>
 
           <div class="row">
