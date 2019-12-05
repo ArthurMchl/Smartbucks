@@ -14,6 +14,11 @@ User.destroy_all
 
 puts '---- Seed model User (4 instances) ----'
 
+demoday = User.create!(
+  email: 'demoday@gmail.com',
+  password: 'azerty'
+)
+
 micka = User.create!(
   email: 'mika@gmail.com',
   password: 'azerty'
