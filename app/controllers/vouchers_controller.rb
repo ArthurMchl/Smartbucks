@@ -52,7 +52,6 @@ class VouchersController < ApplicationController
     @voucher.update(voucher_params)
     if @voucher.save
       redirect_to voucher_path(@voucher, display_confirmation_message: true)
-      flash[:alert] = "Votre bon a bien été modifié"
     else
       render :edit
     end
