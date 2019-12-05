@@ -62,8 +62,11 @@ const displayPriceAdvice = (inputVoucherValue, priceReductionElement) => {
 
   priceReduction = parseInt(inputVoucherValue.value) - (parseInt(inputVoucherValue.value) * coef);
   priceReduction = Math.ceil(priceReduction);
+    if (!isNaN(priceReduction)) {
   addTxtPriceReduction.innerHTML = `Prix de vente conseillé : <span class="weight-font">${Math.ceil(priceReduction)} €</span>`;
-
+    } else {
+      addTxtPriceReduction.innerHTML = ``;
+    }
   priceReductionElement.dataset.price = priceReduction
 }
 
@@ -81,8 +84,6 @@ if (formNewVoucher) {
   inputVoucherValue.addEventListener("change", (event) => {
     displayPriceAdvice(inputVoucherValue, priceReductionElement);
   })
-
-
 
   inputPrice.addEventListener("input", (event) => {
     priceReduction  = parseInt(priceReductionElement.dataset.price, 10)
