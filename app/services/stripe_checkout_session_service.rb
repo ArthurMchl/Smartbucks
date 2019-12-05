@@ -4,7 +4,7 @@ class StripeCheckoutSessionService
     order.update(state: 'paid')
     Notification.create!(
       user: order.voucher.user,
-      viewed: false,
+      viewed: false
     )
   end
 end
