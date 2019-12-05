@@ -1,7 +1,7 @@
 .voucher-publish-grid {
   display:               grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap:              30px 10px;
+  grid-gap:              30px 0px;
   margin-top:            40px;
 }
 
@@ -15,7 +15,7 @@
 }
 
 .flex-direct-column {
-    display: flex;
+  display: flex;
   align-items:center;
   flex-direction: column;
 }

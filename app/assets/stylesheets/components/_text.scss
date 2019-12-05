@@ -11,6 +11,7 @@
   margin-top: 15px !important;
 }
 
+
 .title-label{
   color: $component-color;
   margin-top: 20px;
@@ -40,8 +41,7 @@ input {
 }
 
 .text-recap {
-  color: #A4A4A4;
-  font-weight: bold;
+  color: grey;
   font-size: 24px;
   text-align: center;
   margin-bottom: 20px;
@@ -79,4 +79,13 @@ input {
 
 #price-edit{
   margin-left: 4px;
+}
+
+.center-text-right {
+  text-align: end;
+}
+
+
+.center-text-left {
+  text-align: initial;
 }
