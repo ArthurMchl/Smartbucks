@@ -52,6 +52,7 @@ class VouchersController < ApplicationController
     @voucher.update(voucher_params)
     if @voucher.save
       redirect_to voucher_path(@voucher, display_confirmation_message: true)
+      flash[:alert] = "Votre bon a bien été modifié"
     else
       render :edit
     end
@@ -61,6 +62,7 @@ class VouchersController < ApplicationController
     @voucher = voucher_set_id
     @voucher.delete
     redirect_to profile_path
+    flash[:alert] = "Votre bon a bien été supprimé"
   end
 
   def publish
