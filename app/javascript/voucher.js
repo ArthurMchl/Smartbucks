@@ -11,8 +11,20 @@ const activateSubmitButton = () => {
   buttonValidate.style.backgroundColor = "#63D699";
 }
 
-const changeInputBorderColor = (element, statut) => {
+const changeTextMessageColor = (color, message) => {
+  const alertPrice = document.getElementById("price-alert")
+  alertPrice.style.removeProperty('color');
+  alertPrice.innerHTML = message;
+  alertPrice.style.color = color;
+}
 
+const deleteTextMessageColor = () => {
+  const alertPrice = document.getElementById("price-alert")
+  alertPrice.style.removeProperty('color');
+  alertPrice.innerHTML = "";
+}
+
+const changeInputBorderColor = (element, statut) => {
   if (statut === "ok") {
     element.style.borderColor = "#63D699"
   } else if (statut === "forbidden") {
@@ -41,15 +53,15 @@ const displayPriceAdvice = (inputVoucherValue, priceReductionElement) => {
   }
 
   if (days <= 90) {
-    coef_days = 0.95 - (0.006 * days);
+    coef_days = 0.95 - 0.006 * days;
   } else {
     coef_days = 0.35;
   }
 
   let coef = (coef_vouchers + coef_days) / 2;
 
-  priceReduction = (parseInt(inputVoucherValue.value) * coef);
-  priceReduction = Math.ceil(priceReduction)
+  priceReduction = parseInt(inputVoucherValue.value) - (parseInt(inputVoucherValue.value) * coef);
+  priceReduction = Math.ceil(priceReduction);
   addTxtPriceReduction.innerHTML = `Prix de vente conseillé : <span class="weight-font">${Math.ceil(priceReduction)} €</span>`;
 
   priceReductionElement.dataset.price = priceReduction
@@ -73,41 +85,36 @@ if (formNewVoucher) {
 
 
   inputPrice.addEventListener("input", (event) => {
-    priceReduction = parseInt(priceReductionElement.dataset.price, 10)
-    let alertPrice = document.getElementById("price-alert")
-    const price = parseInt(inputPrice.value, 10)
-    const value = parseInt(inputVoucherValue.value, 10)
+    priceReduction  = parseInt(priceReductionElement.dataset.price, 10)
+    const price     = parseInt(inputPrice.value, 10)
+    const value     = parseInt(inputVoucherValue.value, 10)
 
     if(price > value) {
-      desactiveSubmitButton();
-      changeInputBorderColor(event.currentTarget, "forbidden");
-      alertPrice.innerHTML = "Le prix indiqué est supérieur à la valeur du bon";
-      alertPrice.style.color = "#EA2027"
+        desactiveSubmitButton();
+        changeInputBorderColor(event.currentTarget, "forbidden");
+        changeTextMessageColor("#EA2027", "Le prix indiqué est supérieur à la valeur du bon");
 
-    } else if (priceReduction > value)  {
-      activateSubmitButton();
-      changeInputBorderColor(event.currentTarget, "");
-      alertPrice.innerHTML = "";
-
-    } else if(priceReduction === value) {
-      activateSubmitButton();
-      changeInputBorderColor(event.currentTarget, "");
-      alertPrice.innerHTML = "";
+    } else if (price === priceReduction)  {
+        activateSubmitButton();
+        changeInputBorderColor(event.currentTarget, "");
+        changeTextMessageColor("#grey", "le prix indiqué correspond au prix conseillé");
 
     } else if(price === value) {
-      activateSubmitButton();
-      changeInputBorderColor(event.currentTarget, "");
-      alertPrice.innerHTML = "";
+        activateSubmitButton();
+        changeInputBorderColor(event.currentTarget, "");
+        changeTextMessageColor("#grey", "le prix de vente est égal à la valeur du bon ");
 
     } else if(priceReduction < price && price < value) {
-      activateSubmitButton();
-      changeInputBorderColor(event.currentTarget, "");
-      alertPrice.innerHTML = "";
+        activateSubmitButton();
+        changeInputBorderColor(event.currentTarget, "");
+        changeTextMessageColor("#grey", "le prix de vente est supérieur au prix conseillé");
 
     } else if(price < priceReduction) {
-      activateSubmitButton();
-      changeInputBorderColor(event.currentTarget, "ok");
-      alertPrice.innerHTML = ""
+        activateSubmitButton();
+        changeInputBorderColor(event.currentTarget, "ok");
+        changeTextMessageColor("#grey", "le prix indiqué correspond au prix conseillé");
+    } else {
+      deleteTextMessageColor();
     }
   });
 }
