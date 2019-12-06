@@ -1,19 +1,52 @@
 <div class="container-recap">
 
-  <h3 class="title">Récapitulatif</h3>
+  <h3 class="title d-flex justify-content-center">Récapitulatif</h3>
+
   <div class="voucher-publish-grid text-recap text-center">
-    <div class="ml-3 d-flex justify-content-center"><div class="rounded-cart"><i class="fas fa-shopping-cart text-ico text-white"></i></div></div>
-    <div class="mr-3 mt-2 "><%= @voucher.brand.name %></div>
-    <div class="ml-3 d-flex justify-content-center"><div class="rounded-cart"><i class="fas fa-calendar-times text-ico text-white"></i></div></div>
-    <div class="mr-3 mt-2 "><%= parse_date_fr(@voucher.end_date) %></div>
-    <div class="ml-3 d-flex justify-content-center"><div class="rounded-cart"><i class="fas fa-dollar-sign text-ico text-white"></i></div></div>
-    <div class="mr-3 mt-2 "><%= @voucher.price %> €</div>
-    <div class="ml-3 d-flex justify-content-center"><%= image_tag("logo_mini_smartbucks.png",size: "60x60" )%></div>
-    <div class="mr-3 mt-2 ">Gratuit</div>
 
-    <div class="d-flex justify-content-center ml-3"><%= link_to "Modifier", edit_voucher_path(@voucher), class:"button button-navigation" %></div>
-    <div class="d-flex justify-content-center mr-3"><%= link_to 'Publier', voucher_path(@voucher, display_confirmation_message: true), class:"button button-navigation"%></div>
+    <!-- first line -->
+
+    <div class="ml-3 d-flex justify-content-center">
+      <div class="rounded-cart">
+        <i class="fas fa-shopping-cart text-ico text-white"></i>
+      </div>
+    </div>
+    <div class="d-flex justify-content-start align-items-center"><%= @voucher.brand.name %></div>
+
+    <!-- second line -->
+
+    <div class="ml-3 d-flex justify-content-center align-">
+      <div class="rounded-cart">
+        <i class="fas fa-calendar-times text-ico text-white"></i>
+      </div>
+    </div>
+    <div class="d-flex justify-content-start align-items-center"><%= parse_date_fr(@voucher.end_date) %></div>
+
+    <!-- third line -->
+
+    <div class="ml-3 d-flex justify-content-center">
+      <div class="rounded-cart">
+        <i class="fas fa-dollar-sign text-ico text-white"></i>
+      </div>
+    </div>
+    <div class="d-flex justify-content-start align-items-center"><%= @voucher.price %> €</div>
+
+    <!-- fourth line
+
+    <div class="ml-3 d-flex justify-content-center">
+      <%# image_tag("logo_mini_smartbucks.png",size: "60x60" )%>
+    </div>
+    <div class="d-flex justify-content-start align-items-center">Gratuit</div>
+
+    -->
+
+    <!-- buttons -->
+
+    <div class="d-flex justify-content-center ml-3">
+      <%= link_to "Modifier", edit_voucher_path(@voucher), class:"button button-back" %>
+    </div>
+    <div class="d-flex justify-content-center mr-3">
+      <%= link_to 'Publier', voucher_path(@voucher, display_confirmation_message: true), class:"button button-navigation"%>
+    </div>
   </div>
-
-
 </div>

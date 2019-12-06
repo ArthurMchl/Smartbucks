@@ -1,7 +1,9 @@
 .rounded-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 60px;
   width: 60px;
   border-radius: 50%;
-  background-color: #66D699;
-  padding: 12px;
+  background: linear-gradient(45deg, #62d699, #0fa9cc);
 }
