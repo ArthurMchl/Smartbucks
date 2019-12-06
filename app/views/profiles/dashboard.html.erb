@@ -1,6 +1,6 @@
 <% if @orders_paid.size == 0 %>
   <% else %>
-    <h1 class="title">Mes Achats</h1>
+    <h1 class="title d-flex justify-content-center">Mes achats</h1>
     <div class="index-grid">
       <% @orders_paid.each do |order| %>
         <div>
@@ -12,7 +12,7 @@
 
 <% if @vouchers.size == 0 %>
   <% else %>
-    <h1 class="title">Mes ventes</h1>
+    <h1 class="title d-flex justify-content-center">Mes ventes</h1>
     <div class="index-grid">
       <% @vouchers.each do |voucher| %>
         <div>

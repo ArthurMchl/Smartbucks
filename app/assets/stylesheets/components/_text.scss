@@ -6,6 +6,16 @@
   font-weight: 400;
 }
 
+.title-recap {
+  display: flex;
+  justify-content: center;
+  color: $component-color;
+  margin-bottom: 10px !important;
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
 
 .title-label{
   color: $component-color;
