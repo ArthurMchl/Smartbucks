@@ -426,11 +426,9 @@ ikea_50 = Voucher.create!(
 
 
 cultura_30 = Voucher.create!(
-
-
   value:    30,
   price:    15,
-  end_date: Time.new(2021, 09, 10, 0, 0, 0, '+02:00'),
+  end_date: Time.new(2021, 9, 10, 0, 0, 0, '+02:00'),
   category: 'Carte Cadeau',
   bar_code: '60328438',
   brand_id: cultura.id,
@@ -438,11 +436,9 @@ cultura_30 = Voucher.create!(
 )
 
 cultura_80 = Voucher.create!(
-
-
   value:    80,
   price:    55,
-  end_date: Time.new(2022, 01, 08, 0, 0, 0, '+02:00'),
+  end_date: Time.new(2022, 1, 8, 0, 0, 0, '+02:00'),
   category: 'Avoir',
   bar_code: '60328438',
   brand_id: cultura.id,
@@ -478,7 +474,7 @@ cultura_20 = Voucher.create!(
 
   value:    20,
   price:    8,
-  end_date: Time.new(2020, 09, 13, 0, 0, 0, '+02:00'),
+  end_date: Time.new(2020, 9, 13, 0, 0, 0, '+02:00'),
   category: 'Carte Cadeau',
   bar_code: '60328438',
   brand_id: cultura.id,
@@ -491,7 +487,7 @@ darty_30 = Voucher.create!(
 
   value:    30,
   price:    20,
-  end_date: Time.new(2020, 02, 15, 0, 0, 0, '+02:00'),
+  end_date: Time.new(2020, 2, 15, 0, 0, 0, '+02:00'),
   category: 'Carte Cadeau',
   bar_code: '60328438',
   brand_id: darty.id,
