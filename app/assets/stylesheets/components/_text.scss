@@ -1,14 +1,9 @@
 .title {
   color: $component-color;
-  text-align: center;
-  font-size: 20px;
-  font-weight:bold;
-  margin-bottom: 15px;
-}
-
-.title {
   margin-bottom: 10px !important;
-  margin-top: 15px !important;
+  margin-top: 15px;
+  font-size: 24px;
+  font-weight: 400;
 }
 
 
@@ -21,15 +16,7 @@
   margin-bottom: 50px;
 }
 
-.title-label-edit{
-  color: $component-color;
-  margin-top: 0px;
-  text-align: center;
-  font-size: 25px;
-  font-weight:bold;
-  margin-bottom: 10px;
-  flex: 0 0 50%;
-}
+
 
 .text-url-center {
   color: $component-color;
@@ -52,7 +39,6 @@ input {
   font-weight: bold;
   font-size: 32px;
   text-align: center;
-  margin-bottom: 20px;
 }
 
 #price-advice {

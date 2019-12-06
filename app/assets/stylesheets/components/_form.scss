@@ -10,12 +10,13 @@ select{
 .icon-input {
   height: 50px;
   width: 75px;
-  background-color: $green;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px 0 0 5px;
-  border: 2px solid $green;
+  border: none;
+  background: linear-gradient(45deg, #62d699, #0fa9cc);
+
 }
 
 
