@@ -430,8 +430,8 @@ cultura_30 = Voucher.create!(
 
   value:    30,
   price:    15,
-  end_date: Time.new(2020, 02, 15, 0, 0, 0, '+02:00'),
-  category: 'Chèque Cadeau',
+  end_date: Time.new(2021, 09, 10, 0, 0, 0, '+02:00'),
+  category: 'Carte Cadeau',
   bar_code: '60328438',
   brand_id: cultura.id,
   user_id:  pierre.id
@@ -442,8 +442,44 @@ cultura_80 = Voucher.create!(
 
   value:    80,
   price:    55,
+  end_date: Time.new(2022, 01, 08, 0, 0, 0, '+02:00'),
+  category: 'Avoir',
+  bar_code: '60328438',
+  brand_id: cultura.id,
+  user_id:  pierre.id
+)
+
+cultura_50 = Voucher.create!(
+
+
+  value:    50,
+  price:    30,
+  end_date: Time.new(2020, 04, 30, 0, 0, 0, '+02:00'),
+  category: 'Chèque Cadeau',
+  bar_code: '60328438',
+  brand_id: cultura.id,
+  user_id:  pierre.id
+)
+
+cultura_150 = Voucher.create!(
+
+
+  value:    150,
+  price:    55,
   end_date: Time.new(2020, 02, 15, 0, 0, 0, '+02:00'),
   category: 'Chèque Cadeau',
+  bar_code: '60328438',
+  brand_id: cultura.id,
+  user_id:  pierre.id
+)
+
+cultura_20 = Voucher.create!(
+
+
+  value:    20,
+  price:    8,
+  end_date: Time.new(2020, 09, 13, 0, 0, 0, '+02:00'),
+  category: 'Carte Cadeau',
   bar_code: '60328438',
   brand_id: cultura.id,
   user_id:  pierre.id
